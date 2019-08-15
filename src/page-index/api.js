@@ -1,6 +1,7 @@
 import apiSearchMovie from '../apiSearchMovie.js'
 import apiSearchImg from '../apiSearchImg.js'
 import apiPopular from '../apiPopular.js'
+
 import popularHbs from '../partials/popular.hbs'
 
 // apiPopular.fetch()
@@ -10,9 +11,13 @@ import popularHbs from '../partials/popular.hbs'
 const refs = {
   searchForm: document.querySelector('#searchForm'),
   gallery: document.querySelector('.gallery'),
+  galleryTv: document.querySelector('.galleryTv'),
+  nav: document.querySelector('.nav__film')
 };
 
-// refs.searchForm.addEventListener('submit', searchSbm)
+console.log(refs.searchForm);
+refs.searchForm.addEventListener('submit', searchSbm)
+refs.nav.addEventListener('click', refresh)
 
 function searchSbm(e) {
   e.preventDefault();
@@ -26,12 +31,22 @@ function searchSbm(e) {
   // apiSearchImg.fetch()
 }
 
+function refresh(e) {
+  e.preventDefault();
+
+  const currentChoise = e.target.dataset.type;
+  console.log('currentChoise :', currentChoise);
+  // markup(currentChoise)
+}
+
 function markup() {
   apiPopular.fetch().then(result => {
     insertMarkup(result)
   })
 }
 markup()
+
+
 
 function insertMarkup(items) {
   const markup = buildMarkup(items);
