@@ -1,0 +1,69 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+nav {
+  background-color: #68a097;
+}
+
+.container{
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.galary{
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 0 auto;
+  list-style: none;
+  padding: 5px;
+}
+.movie-title{
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 70%;
+  left: 8%
+}
+.svg-bell{
+  position: absolute;
+  top: 15%;
+  left: 88%;
+  width: 15px;
+  height: 18px;
+  fill:#fff;
+}
+.svg-star{
+  position: absolute;
+  top: 15%;
+  left: 79%;
+  width: 17px;
+  height: 17px;
+  fill:#fff;
+}
+.movie{
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+
+@media (min-width:767px){
+  .galary{
+    width: 769px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    height: auto;
+    background-color: #red;
+    margin: 0 auto;
+  }
+  .galary{
+    padding-top: 20px;
+  }
+}
+
