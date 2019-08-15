@@ -1,6 +1,7 @@
 import '../scss/main.scss';
 import '../scss/header.scss';
 import './page.scss';
+import burgerMenu from './../partials/menu-burger';
 
 
 document.addEventListener('DOMContentLoaded', () => {

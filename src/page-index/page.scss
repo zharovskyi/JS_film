@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -7,26 +6,30 @@ body {
 nav {
   background-color: #68a097;
 }
-
 .container{
   max-width: 1024px;
   margin: 0 auto;
 }
 .galary{
+  padding: 0px;
+  padding-top: 10px;
   width: 360px;
   display: flex;
   flex-direction: column;
   height: auto;
   margin: 0 auto;
   list-style: none;
-  padding: 5px;
+}
+.movie-logo{
+  width: 346px;
+  height: 177px;
 }
 .movie-title{
   margin: 0;
   font-size: 18px;
   color: #fff;
   position: absolute;
-  top: 70%;
+  top: 77%;
   left: 8%
 }
 .svg-bell{
@@ -36,6 +39,10 @@ nav {
   width: 15px;
   height: 18px;
   fill:#fff;
+  &:hover{
+    width: 20px;
+    height: 19px;
+  }
 }
 .svg-star{
   position: absolute;
@@ -44,17 +51,21 @@ nav {
   width: 17px;
   height: 17px;
   fill:#fff;
+  &:hover{
+    width: 23px;
+    height: 20px;
+  }
 }
+
 .movie{
   position: relative;
   margin: 0;
-  padding: 0;
+  padding: 0 6px;
+  margin-bottom: 10px;
 }
-
-
 @media (min-width:767px){
   .galary{
-    width: 769px;
+    width: 750px;
     display: flex;
     justify-content: space-evenly;
     flex-flow: row wrap;
@@ -65,5 +76,30 @@ nav {
   .galary{
     padding-top: 20px;
   }
+  .movie{
+    margin-bottom: 15px;
+  }
+  .movie-title{
+    top: 82%;
+    left: 4%;
+  }
+  .movie-logo{
+    width: 353px;
+    height: 177px;
+  }
 }
 
+@media (min-width:1023px){
+.galary{
+  width: 1000px;
+}
+  .movie-logo{
+    width: 481px;
+    height: 248px;
+  }
+  .movie-title{
+    top: 88%;
+    left: 4%;
+  }
+
+}
