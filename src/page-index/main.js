@@ -1,3 +1,4 @@
+import '../scss/nav.scss';
 import '../scss/main.scss';
 import '../scss/header.scss';
 import './page.scss';
