@@ -1,0 +1,20 @@
+.nav__film {
+//   max-width: 200px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 17px;
+  padding-bottom: 20px;
+  box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.25);
+}
+
+.nav__main {
+  width: 65px;
+  height: 12px;
+  color: #372c48;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.14px;
+  font-size: 14px;
+}
