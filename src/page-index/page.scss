@@ -7,21 +7,44 @@ body {
   max-width: 1024px;
   margin: 0 auto;
 }
-.galary {
+.gallery{
+  width: 360px;
   padding: 0px;
   padding-top: 10px;
-  width: 360px;
   display: flex;
   flex-direction: column;
   height: auto;
   margin: 0 auto;
   list-style: none;
 }
-.movie-logo {
+.movie{
+  position: relative;
+  margin: 0;
+  padding: 0 6px;
+  margin-bottom: 10px;
+}
+.movie-logo{
   width: 346px;
   height: 177px;
 }
-.movie-title {
+.movie::before{
+  content: "";
+  background-image: url('../img/shadow.png');
+  display: block;
+  width: 346px;
+  height: 177px;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50% , -50%);
+}
+.movie:hover img {
+  top: -4px;
+  left: -4px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.movie-title{
   margin: 0;
   font-size: 18px;
   color: #fff;
@@ -54,14 +77,8 @@ body {
   }
 }
 
-.movie {
-  position: relative;
-  margin: 0;
-  padding: 0 6px;
-  margin-bottom: 10px;
-}
-@media (min-width: 767px) {
-  .galary {
+@media (min-width:767px){
+  .gallery{
     width: 750px;
     display: flex;
     justify-content: space-evenly;
@@ -69,12 +86,28 @@ body {
     height: auto;
     margin: 0 auto;
   }
-  .galary {
+  .movie-logo{
+    width: 353px;
+    height: 177px;
+  }
+  .galary{
     padding-top: 20px;
   }
   .movie {
     margin-bottom: 15px;
   }
+  .movie:hover img {
+    top: -4px;
+    left: -4px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .movie::before{
+    content: "";
+    background-image: url('../img/shadow.png');
+    display: block;
+    width: 354px;
   .movie-title {
     top: 82%;
     left: 4%;
@@ -82,19 +115,52 @@ body {
   .movie-logo {
     width: 353px;
     height: 177px;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50% , -50%);
+  }
+  .movie-title{
+    top: 78%;
+    left: 4%;
   }
 }
 
-@media (min-width: 1023px) {
-  .galary {
-    width: 1000px;
-  }
-  .movie-logo {
+@media (min-width:1023px){
+.gallery{
+  width: 1000px;
+}
+  .movie-logo{
     width: 481px;
     height: 248px;
   }
-  .movie-title {
+  .movie::before{
+    content: "";
+    background-image: url('../img/shadow.png');
+    display: block;
+    background-size: cover;
+    width: 481px;
+    height: 248px;
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50% , -50%);
+  }
+  .movie:hover img {
+    top: -4px;
+    left: -4px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .movie-title{
     top: 88%;
     left: 4%;
   }
+  // .whitepeper-svg{
+  //   display: block;
+  //   width: 500px;
+  //   height: 800px;
+  //   background-color: black;
+
+  // }
+
 }
