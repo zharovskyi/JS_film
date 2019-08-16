@@ -14,10 +14,6 @@
         </a>
       </li>
     </ul>
-    <form action="search" id="searchForm">
-        <input type="text" id="searchInput" name="search" placeholder="Search" />
-
-      </form>
     <a class="head__search" href="#">
       <svg class="whitepeper-svg">
         <use href="../img/symbol-defs.svg#icon-search"></use>
@@ -26,21 +22,12 @@
         <div class="lightbox_iteam">
           <p class="lightbox_iteam_text">Mooogle</p>
         </div>
-        <div class="lightbox_iteam_btn">
-          <input
-            class="lightbox_iteam_btn_submit"
-            type="submit"
-            value=" "
-          />
-          <input
-            class="lightbox_iteam_btn_search"
-            type="text"
-            placeholder="Search"
-          />
-        </div>
+        <form class="lightbox_iteam_btn">
+          <input class="lightbox_iteam_btn_submit" type="submit"/>
+          <input name="film" class="lightbox_iteam_btn_search" type="text" placeholder="Search" />
+        </form>
       </div>
-      <!-- <div class="lightbox_shadow"></div> -->
+      <div class="lightbox_shadow"></div>
     </a>
   </nav>
 </header>
-
