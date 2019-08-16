@@ -2,7 +2,7 @@ const baseUrl = 'https://api.themoviedb.org/3/';
 
 export default {
   key: '667e6c0579f71e858d539ca597385526',
-  type: 'movie',
+  type: '',
   page: 1,
   language: 'en-US',
   query: 'fast',
