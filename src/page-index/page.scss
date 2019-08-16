@@ -54,11 +54,11 @@ body {
 
 .movie-title {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   position: absolute;
-  top: 77%;
-  left: 8%;
+  top: 79%;
+  left: 4%;
 }
 
 .svg-bell {
@@ -169,25 +169,5 @@ body {
       transform: translate(-50%, -50%);
     }
 
-    .movie:hover img {
-      top: -4px;
-      left: -4px;
-      position: relative;
-      top: 0;
-      left: 0;
-    }
+}
 
-    .movie-title {
-      top: 88%;
-      left: 4%;
-    }
-
-    // .whitepeper-svg{
-    //   display: block;
-    //   width: 500px;
-    //   height: 800px;
-    //   background-color: black;
-
-    // }
-
-  }
