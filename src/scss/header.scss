@@ -51,6 +51,12 @@ visibility: hidden;
 .span__text::after{
 visibility: hidden;
 }
+.sort {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 // .burger__menu{
 //   display: block;
 //   position: absolute;

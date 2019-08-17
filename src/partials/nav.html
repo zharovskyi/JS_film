@@ -1,5 +1,18 @@
 <nav class="nav__film">
   <a class="nav__main" data-type="movie" href="#">FILM</a>
   <a class="nav__main" data-type="tv" href="#">TV SHOW</a>
-  <a class="nav__main" href="#">FAVORITES</a>
+  <a class="nav__main" data-type="favotite" href="#">FAVORITES</a>
 </nav>
+<section class="sort">
+  <h2>Category</h2>
+  <select name="sortName" id="sortName">Sort By Name
+    <option value="" hidden disabled selected>Sort By Name</option>
+    <option value="title">By Name</option>
+    <option value="popularity">Popularity</option>
+  </select>
+  <select name="date" id="sorDate">By date
+    <option value="" hidden disabled selected>Sort By Date</option>
+    <option value="release_date">New</option>
+    <option value="">Latest</option>
+  </select>
+</section>

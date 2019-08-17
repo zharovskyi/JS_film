@@ -13,7 +13,6 @@ function open() {
   openlightbox.classList.add("lightbox_is_open");
   lightboxShadow.classList.add("lightbox_shadow_is_open");
   window.addEventListener("keydown", closeKey)
-  console.log('lightboxShadow :', lightboxShadow);
 };
 
 function closeKey(event) {
@@ -31,7 +30,6 @@ function close () {
   };
   openlightbox.classList.remove("lightbox_is_open");
   lightboxShadow.classList.remove("lightbox_shadow_is_open");
-  console.log('lightboxShadow :', lightboxShadow);
 };
 
 closelightboxBtn.addEventListener("click", closeBtn);
