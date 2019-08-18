@@ -126,8 +126,6 @@ function compareTitle(a, b) {
     return comparison;
   }
 
-
-
 // Add list item to HtML
 function insertMarkup(items) {
   const markup = buildMarkup(items);
