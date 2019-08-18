@@ -36,3 +36,4 @@ function closeBtn () {
   openlightbox.classList.remove("lightbox_is_open");
   lightboxShadow.classList.remove("lightbox_shadow_is_open");
 };
+

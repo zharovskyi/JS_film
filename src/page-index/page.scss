@@ -2,13 +2,15 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fff;
- }
- .container {
+}
+
+.container {
   max-width: 1024px;
   margin: 0 auto;
-  position: relative;
- }
- .gallery{
+  // position: relative;
+}
+
+.gallery {
   width: 360px;
   padding: 0px;
   padding-top: 10px;
@@ -17,43 +19,50 @@ body {
   height: auto;
   margin: 0 auto;
   list-style: none;
- }
- .movie{
+}
+
+.movie {
   position: relative;
   margin: 0;
   padding: 0 6px;
   margin-bottom: 10px;
- }
- .movie-logo{
+}
+
+.movie-logo {
   width: 346px;
   height: 177px;
- }
- .movie::before{
+}
+
+.movie::before {
   content: "";
   background-image: url('../img/shadow.png');
   display: block;
   width: 346px;
   height: 177px;
   position: absolute;
-  left: 50%; top: 50%;
-  transform: translate(-50% , -50%);
- }
- .movie:hover img {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.movie:hover img {
   top: -4px;
   left: -4px;
   position: relative;
   top: 0;
   left: 0;
- }
- .movie-title{
+}
+
+.movie-title {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   position: absolute;
-  top: 77%;
-  left: 8%;
- }
- .svg-bell {
+  top: 79%;
+  left: 4%;
+}
+
+.svg-bell {
   position: absolute;
   top: 15%;
   left: 88%;
@@ -61,12 +70,14 @@ body {
   height: 18px;
   fill: #fff;
   cursor: pointer;
+
   &:hover {
     width: 20px;
     height: 19px;
   }
- }
- .svg-star {
+}
+
+.svg-star {
   position: absolute;
   top: 15%;
   left: 79%;
@@ -74,13 +85,15 @@ body {
   height: 17px;
   fill: #fff;
   cursor: pointer;
+
   &:hover {
     width: 23px;
     height: 20px;
   }
- }
- @media (min-width:767px){
-  .gallery{
+}
+
+@media (min-width:767px) {
+  .gallery {
     width: 750px;
     display: flex;
     justify-content: space-evenly;
@@ -88,16 +101,20 @@ body {
     height: auto;
     margin: 0 auto;
   }
-  .movie-logo{
+
+  .movie-logo {
     width: 353px;
     height: 177px;
   }
-  .galary{
+
+  .galary {
     padding-top: 20px;
   }
+
   .movie {
     margin-bottom: 15px;
   }
+
   .movie:hover img {
     top: -4px;
     left: -4px;
@@ -105,62 +122,55 @@ body {
     top: 0;
     left: 0;
   }
-  .movie::before{
+
+  .movie::before {
     content: "";
     background-image: url('../img/shadow.png');
     display: block;
     width: 354px;
-  .movie-title {
-    top: 82%;
-    left: 4%;
+
+    .movie-title {
+      top: 82%;
+      left: 4%;
+    }
+
+    .movie-logo {
+      width: 353px;
+      height: 177px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .movie-title {
+      top: 78%;
+      left: 4%;
+    }
   }
-  .movie-logo {
-    width: 353px;
-    height: 177px;
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50% , -50%);
-  }
-  .movie-title{
-    top: 78%;
-    left: 4%;
-  }
- }
- @media (min-width:1023px){
- .gallery{
-  width: 1000px;
- }
-  .movie-logo{
-    width: 481px;
-    height: 248px;
-  }
-  .movie::before{
-    content: "";
-    background-image: url('../img/shadow.png');
-    display: block;
-    background-size: cover;
-    width: 481px;
-    height: 248px;
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50% , -50%);
-  }
-  .movie:hover img {
-    top: -4px;
-    left: -4px;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-  .movie-title{
-    top: 88%;
-    left: 4%;
-  }
-  // .whitepeper-svg{
-  //   display: block;
-  //   width: 500px;
-  //   height: 800px;
-  //   background-color: black;
-  // }
- }
- }
+}
+  @media (min-width:1023px) {
+    .gallery {
+      width: 1000px;
+    }
+
+    .movie-logo {
+      width: 481px;
+      height: 248px;
+    }
+
+    .movie::before {
+      content: "";
+      background-image: url('../img/shadow.png');
+      display: block;
+      background-size: cover;
+      width: 481px;
+      height: 248px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+}
+

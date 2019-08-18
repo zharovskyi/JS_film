@@ -1,12 +1,13 @@
 const baseUrl = 'https://api.themoviedb.org/3/search/';
 
 export default {
-  key: '667e6c0579f71e858d539ca597385526',
+  key: 'https://api.themoviedb.org/3/search/',
   type: 'movie',
   page: 1,
   adult: false,
   language: 'en-US',
-  query: 'fast',
+  // query: 'fast',
+  query: '',
 
   fetch() {
 
@@ -16,7 +17,7 @@ export default {
       .then(res => res.json())
       .then(parseRes => {
         console.log('movie:', parseRes.results);
-        return parseRes.result;
+        return parseRes.results;
 
       })
   },
