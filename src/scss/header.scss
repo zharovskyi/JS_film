@@ -149,41 +149,21 @@ visibility: hidden;
 .lightbox {
   background-color: #77c1bb;
   width: 100vw;
-  height: 449px;
+  height: 149px;
   position: fixed;
   left: 0;
   top: 0;
   padding: 0;
   z-index: 3;
   visibility: hidden;
-  // animation: current-anim-name, 2s, ease-in;
-  // animation-name: current-anim-name;
-  // animation-duration: 2s;
-  // animation-delay: 5s;
+  transition: height 1.25s ease-in-out;
 }
 
 .lightbox_is_open {
   visibility: visible;
   cursor: default;
-  // animation: current-anim-name, 2s, ease-in;
+  height: 449px;
 }
-
-// @keyframes current-anim-name {
-//   35% {
-//     height: 20px;
-//     width: 50vw;
-//     background-color: #77c1bb;
-//   }
-//   50% {
-//     height: 200px;
-//     width: 70vw;
-//   }
-//   100% {
-//     height: 449px;
-//     width: 100vw;
-//     background-color: black;
-//   }
-// }
 
 .lightbox_shadow_is_open {
   background-color: rgba(0, 0, 0, 0.5);
@@ -193,12 +173,12 @@ visibility: hidden;
   z-index: 2;
   top: 0px;
   left: 0px;
+  transition: all 0.25s ease-in-out;
 }
 
 .lightbox_iteam::before {
   content: '';
   background-image: url(../img/logo_cow.png);
-  // background-image: url(../img/header/cow.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -231,7 +211,7 @@ visibility: hidden;
 
 .lightbox_iteam_btn_submit {
   border: 0;
-  background-color: #77c1bb;
+  background-color: transparent;
   width: 28px;
   height: 27px;
   background-image: url(../img/search2.svg);

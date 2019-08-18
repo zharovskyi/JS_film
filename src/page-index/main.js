@@ -7,6 +7,7 @@ import './api.js';
 import './search.js';
 import '../scss/subscription.scss'
 import '../partials/subscription.js'
+import '../scss/footer.scss'
 // import apiSearchMovie from '../apiSearchMovie.js'
 // import apiSearchImg from '../apiSearchMovie.js'
 // import apiPopular from '../apiPopular.js'

@@ -1,25 +1,45 @@
 <div class="container">
   <ul class="gallery">
-<form class="subscription" action="#">
-  <input class="subscription_item" type="text">
-  <input class="subscription_item" type="text">
-  <input class="subscription_item" type="text">
-  <input class="subscription_item" type="submit">
-</form>
-<!-- <div class="modal-wrapper">
-  <div class="modal">
-    <div class="head">
-      <a class="btn-close trigger" href="#">
-        <i class="fa fa-times" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="content">
-        <div class="good-job">
-          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-          <h1>Good Job!</h1>
+
+    <div class="subscription" action="#">
+      <h2 class="subscription_headline">Подписаться на изминения</h2>
+      <form class="subscription_container">
+        <div class="subscription_container_box">
+          <input
+            class="subscription_container_box_item"
+            type="text"
+            placeholder="Name"
+            required
+          />
+          <input
+            class="subscription_container_box_item"
+            type="text"
+            placeholder="Email"
+            required
+          />
+          <input
+            class="subscription_container_box_item"
+            type="text"
+            placeholder="Phone"
+            required
+          />
         </div>
+        <input
+          class="subscription_container_box_item subscription_btn"
+          type="submit"
+          value="Submit"
+        />
+      </form>
     </div>
-  </div>
-</div> -->
-    </ul>
+
+    <div class="subscription_thenks">
+      <h2 class="subscription_thenks_headline">Спасибо!</h2>
+      <p class="subscription_thenks_text">
+        Теперь ви будете получать увидомление об изминениях в "фильме". Ви
+        всегда сможите отписаться перейдя по ссилке в письме.
+      </p>
+      <input class="subscription_thenks_btn" type="submit" value="Ok" />
+    </div>
+    
+  </ul>
 </div>
