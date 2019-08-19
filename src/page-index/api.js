@@ -1,9 +1,8 @@
 
 import apiSearchMovie from '../apiSearchMovie.js'
-// import apiSearchImg from '../apiSearchImg.js'
 import apiPopular from '../apiPopular.js'
 import popularHbs from '../partials/popular.hbs'
-import {compareTitle,comparePopularity,compareDateNew,compareDateOld} from '../sortFunct'
+import {compareTitle,comparePopularity,compareDateNew,compareDateOld} from '../sortFunct.js'
 
 
 
@@ -12,12 +11,12 @@ const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
   gallery: document.querySelector('.gallery'),
   nav: document.querySelector('.nav__film'),
-  // addFavoriteFilm: document.querySelector('.svg-star'),
   itemGallery: [],
   sortName: document.getElementById('sortName'),
   sortDate: document.getElementById('sortDate'),
+  
 };
-
+console.log(refs.addToFavorite);
 // BUILD MAIN PAGE LIST
 function markup() {
   apiPopular.type = 'movie';
@@ -27,11 +26,12 @@ function markup() {
   })
 }
 markup();
+
 refs.searchForm.addEventListener('submit', searchSbm);
 refs.nav.addEventListener('click', refreshFilmChoice);
-// refs.addFavoriteFilm.addEventListener('click', addFilm);
 refs.sortName.addEventListener('click', sortItemByName);
 refs.sortDate.addEventListener('click',sortItemByDate);
+// refs.gallery.addEventListener('click', addFavoriteFilm);
 
 
 // SEARCH FILM
@@ -58,7 +58,21 @@ function refreshFilmChoice(e) {
     insertMarkup(result);
   })
 }
+// add film to local storage
+// let localStorageItem = [];
+// function addFavoriteFilm(e) {
+//   const star = document.querySelector('.svg-star > use');
+  
+//   if(e.target === star){
+//   e.target.dataset.id = '1';
 
+     
+
+//   }else{
+//     console.log('object');
+//   }
+  
+// }
 // sort item byName
 function sortItemByName(e) {
   const carrentChoice = e.currentTarget.value;
