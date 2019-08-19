@@ -155,20 +155,20 @@ visibility: hidden;
 .lightbox {
   background-color: #77c1bb;
   width: 100vw;
-  height: 149px;
+  height: 449px;
   position: fixed;
   left: 0;
-  top: 0;
+  top: -500px;
   padding: 0;
   z-index: 3;
   visibility: hidden;
-  transition: height 1.25s ease-in-out;
+  transition: top 0.55s ease-in-out;
 }
 
 .lightbox_is_open {
   visibility: visible;
   cursor: default;
-  height: 449px;
+  top: 0px;
 }
 
 .lightbox_shadow_is_open {

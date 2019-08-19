@@ -1,0 +1,51 @@
+.back_to_top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  // text-align: center;
+  // line-height: 30px;
+  background: #f5f5f5;
+  color: #444;
+  cursor: pointer;
+  border-radius: 35px;
+  display: none;
+
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.back_to_top_arrow {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  transition: all 0.3s ease;
+}
+
+.back_to_top_arrow::after {
+  background-image: url(../img/up-arrow-angle.svg);
+  background-position: center;
+  background-size: cover;
+  content: '';
+  width: 20px;
+}
+
+.back_to_top:hover {
+  background: #e9ebec;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.back_to_top_arrow:hover {
+  color: #fff;
+  top: 5px;
+}
+
+.back_to_top-show {
+  display: block;
+}

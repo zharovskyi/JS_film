@@ -49,6 +49,9 @@ function searchSbm(e) {
 
 // Click Button and Buid page TV SHOW
 function refreshFilmChoice(e) {
+  if( e.target.classList[0] !== 'nav__main'){
+    return
+  }
   e.preventDefault();
   const currentChoise = e.target.dataset.type;
   clearListItemFilm();
