@@ -1,8 +1,38 @@
-// const burgerMenu = document.createElement('ul');
-// burgerMenu.classList="burger__menu";
-// const head = document.querySelector(".head");
-// const burgerList = document.createElement('li');
-// burgerList.classList="burger__list";
-// head.append(burgerMenu);
-// burgerMenu.prepend(burgerList);
+
+const burgerButton = document.querySelector('.burger__button');
+const burgerMenu = document.querySelector('.burger__menu');
+const shadowBox = document.querySelector('.shadow__box');
+
+function openBurgerWindow(e) {
+  if (event.target === shadowBox) {
+    return;
+  };
+  burgerMenu.classList.add("burger__menu__open");
+  shadowBox.classList.add("shadow__box");
+}
+burgerButton.addEventListener("click" , openBurgerWindow);
+
+function closeBurgerWindow (e) {
+  if (event.target !== event.currentTarget) {
+    return;
+  };
+  burgerMenu.classList.remove("burger__menu__open");
+  shadowBox.classList.remove("shadow__box");
+}
+shadowBox.addEventListener("click", closeBurgerWindow);
+
+
+// const filmsButton = document.querySelector('.burger__list');
+//-------- function  burger menu  open films window
+// function markup() {
+//   apiPopular.type = 'movie';
+//   apiPopular.fetch().then(result => {
+//     refs.itemGallery = result;
+//     insertMarkup(result);
+//   })
+// }
+// filmsButton.addEventListener('click',markup)
+
+
+
 
