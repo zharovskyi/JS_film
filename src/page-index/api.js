@@ -3,6 +3,7 @@ import apiSearchMovie from '../apiSearchMovie.js'
 // import apiSearchImg from '../apiSearchImg.js'
 import apiPopular from '../apiPopular.js'
 import popularHbs from '../partials/popular.hbs'
+import {compareTitle,comparePopularity,compareDateNew,compareDateOld} from '../sortFunct'
 
 
 
@@ -14,7 +15,7 @@ const refs = {
   // addFavoriteFilm: document.querySelector('.svg-star'),
   itemGallery: [],
   sortName: document.getElementById('sortName'),
-  sortDate: document.getElementById('sorDate'),
+  sortDate: document.getElementById('sortDate'),
 };
 
 // BUILD MAIN PAGE LIST
@@ -26,13 +27,11 @@ function markup() {
   })
 }
 markup();
-import '../sortFunct.js';
 refs.searchForm.addEventListener('submit', searchSbm);
 refs.nav.addEventListener('click', refreshFilmChoice);
 // refs.addFavoriteFilm.addEventListener('click', addFilm);
 refs.sortName.addEventListener('click', sortItemByName);
 refs.sortDate.addEventListener('click',sortItemByDate);
-
 
 
 // SEARCH FILM
@@ -71,60 +70,20 @@ function sortItemByName(e) {
   }
   clearListItemFilm();
   insertMarkup(refs.itemGallery);
-
 }
+
 // sort by date
 function sortItemByDate(e) {
   const carrentChoice = e.currentTarget.value;
-  console.log("object",e.currentTarget.value);
-  console.log("refs",refs.itemGallery);
   if(carrentChoice === 'release_date'){
-    refs.itemGallery.sort(compareDate);
+    refs.itemGallery.sort(compareDateNew);
   }
-  // else {
-  //   refs.itemGallery.sort(comparePopularity);
-  // }
+  else {
+    refs.itemGallery.sort(compareDateOld);
+  }
   clearListItemFilm();
   insertMarkup(refs.itemGallery);
-
 }
-// SORT BY NAME function that sort item;
-function compareTitle(a, b) {
-    const compA = a.title.toUpperCase();
-    const compB = b.title.toUpperCase();
-    
-    let comparison = 0;
-    if (compA > compB) {
-      comparison = 1;
-    } else if (compA < compB) {
-      comparison = -1;
-    }
-    return comparison;
-  }
-  function comparePopularity(a, b) {
-    const compA = a.popularity;
-    const compB = b.popularity;
-    
-    let comparison = 0;
-    if (compA > compB) {
-      comparison = 1;
-    } else if (compA < compB) {
-      comparison = -1;
-    }
-    return comparison;
-  }
-  function compareDate(a, b) {
-    const compA = a.release_date;
-    const compB = b.release_date;
-    
-    let comparison = 0;
-    if (compA > compB) {
-      comparison = 1;
-    } else if (compA < compB) {
-      comparison = -1;
-    }
-    return comparison;
-  }
 
 // Add list item to HtML
 function insertMarkup(items) {
