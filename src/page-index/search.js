@@ -10,7 +10,9 @@ function open() {
   };
   openlightbox.classList.add("lightbox_is_open");
   lightboxShadow.classList.add("lightbox_shadow_is_open");
+
   window.addEventListener("keydown", closeKey);
+
 };
 
 function closeKey(event) {

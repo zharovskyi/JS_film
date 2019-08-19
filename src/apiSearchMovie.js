@@ -6,7 +6,6 @@ export default {
   page: 1,
   adult: false,
   language: 'en-US',
-  // query: 'fast',
   query: '',
 
   fetch() {

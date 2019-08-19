@@ -1,32 +1,38 @@
+
 import apiSearchMovie from '../apiSearchMovie.js'
 // import apiSearchImg from '../apiSearchImg.js'
 import apiPopular from '../apiPopular.js'
-
 import popularHbs from '../partials/popular.hbs'
-import './search.js';
-// apiPopular.fetch()
-// apiSearchImg.fetch()
-// apiSearchMovie.fetch()
+import {compareTitle,comparePopularity,compareDateNew,compareDateOld} from '../sortFunct'
+
+
+
 
 const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
   gallery: document.querySelector('.gallery'),
-  galleryTv: document.querySelector('.galleryTv'),
   nav: document.querySelector('.nav__film'),
+  // addFavoriteFilm: document.querySelector('.svg-star'),
+  itemGallery: [],
+  sortName: document.getElementById('sortName'),
+  sortDate: document.getElementById('sortDate'),
 };
-// BUILD MAIN PAGE LIST
 
+// BUILD MAIN PAGE LIST
 function markup() {
   apiPopular.type = 'movie';
   apiPopular.fetch().then(result => {
+    refs.itemGallery = result;
     insertMarkup(result);
   })
 }
 markup();
-
 refs.searchForm.addEventListener('submit', searchSbm);
 refs.nav.addEventListener('click', refreshFilmChoice);
-console.log(refs.searchForm);
+// refs.addFavoriteFilm.addEventListener('click', addFilm);
+refs.sortName.addEventListener('click', sortItemByName);
+refs.sortDate.addEventListener('click',sortItemByDate);
+
 
 // SEARCH FILM
 function searchSbm(e) {
@@ -36,8 +42,8 @@ function searchSbm(e) {
   apiSearchMovie.fetch()
     .then(result => {
       clearListItemFilm();
+      refs.itemGallery = result;
       insertMarkup(result);
-      
     })
 }
 
@@ -45,20 +51,41 @@ function searchSbm(e) {
 function refreshFilmChoice(e) {
   e.preventDefault();
   const currentChoise = e.target.dataset.type;
-  console.log('currentChoise :', currentChoise);
   clearListItemFilm();
   apiPopular.type = currentChoise;
   apiPopular.fetch().then(result => {
-    console.log(result);
+    refs.itemGallery = result;
     insertMarkup(result);
-
   })
-  // markup(currentChoise);
 }
 
+// sort item byName
+function sortItemByName(e) {
+  const carrentChoice = e.currentTarget.value;
+  if(carrentChoice === 'title'){
+    refs.itemGallery.sort(compareTitle);
+  }
+  else if(carrentChoice === 'popularity') {
+    refs.itemGallery.sort(comparePopularity);
+  }
+  clearListItemFilm();
+  insertMarkup(refs.itemGallery);
+}
 
+// sort by date
+function sortItemByDate(e) {
+  const carrentChoice = e.currentTarget.value;
+  if(carrentChoice === 'release_date'){
+    refs.itemGallery.sort(compareDateNew);
+  }
+  else {
+    refs.itemGallery.sort(compareDateOld);
+  }
+  clearListItemFilm();
+  insertMarkup(refs.itemGallery);
+}
 
-
+// Add list item to HtML
 function insertMarkup(items) {
   const markup = buildMarkup(items);
   refs.gallery.insertAdjacentHTML('beforeend', markup);
@@ -72,4 +99,3 @@ function buildMarkup(items) {
 function clearListItemFilm() {
   refs.gallery.innerHTML = '';
 }
-
