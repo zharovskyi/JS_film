@@ -23,12 +23,5 @@ export default {
 }
 
 
-  // get query() {
-  //   return this.query;
-  // },
-  // set query(string) {
-  //   this.query = string;
-  // },
-
 
 

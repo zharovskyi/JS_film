@@ -1,18 +1,20 @@
 <nav class="nav__film">
-  <a class="nav__main" data-type="movie" href="#">FILM</a>
-  <a class="nav__main" data-type="tv" href="#">TV SHOW</a>
-  <a class="nav__main" data-type="favotite" href="#">FAVORITES</a>
+  <a class="nav__main" data-type="movie" href="#">ФИЛЬМЫ</a>
+  <a class="nav__main" data-type="tv" href="#">СЕРИАЛЫ</a>
+  <a class="nav__main" data-type="favotite" href="#">ИЗБРАННОЕ</a>
 </nav>
 <section class="sort">
-  <h2>Category</h2>
-  <select name="sortName" id="sortName">
-    <option value="" hidden disabled selected>Sort By Name</option>
-    <option value="title">By Name</option>
-    <option value="popularity">Popularity</option>
+  <h2 class="sort__text">Подкатегории</h2>
+  <div class="sort__name">
+  <select class="sort__name" name="sortName" id="sortName">
+    <option value="" hidden disabled selected>По имени</option>
+    <option value="title">По названию</option>
+    <option value="popularity">Популярное</option>
   </select>
   <select name="sortDate" id="sortDate">
-    <option value="" hidden disabled selected>Sort By Date</option>
-    <option value="release_date">Latest Film</option>
-    <option value="release_dateOld">New Film</option>
+    <option value="" hidden disabled selected>По дате</option>
+    <option value="release_date">Новинки</option>
+    <option value="release_dateOld">Премьеры</option>
   </select>
+</div>
 </section>
