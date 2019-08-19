@@ -4,11 +4,11 @@ import apiSearchMovie from '../apiSearchMovie.js'
 import apiPopular from '../apiPopular.js'
 import popularHbs from '../partials/popular.hbs'
 import {compareTitle,comparePopularity,compareDateNew,compareDateOld} from '../sortFunct'
+import '../partials/menu-burger.js'
 
 
 
-
-const refs = {
+ const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
   gallery: document.querySelector('.gallery'),
   nav: document.querySelector('.nav__film'),
@@ -16,7 +16,10 @@ const refs = {
   itemGallery: [],
   sortName: document.getElementById('sortName'),
   sortDate: document.getElementById('sortDate'),
+  filmsButton: document.querySelector('.burger__search__films'),
+  serialsButton: document.querySelector('.burger__search__serials'),
 };
+console.log(refs.filmsButton);
 
 // BUILD MAIN PAGE LIST
 function markup() {
@@ -32,6 +35,8 @@ refs.nav.addEventListener('click', refreshFilmChoice);
 // refs.addFavoriteFilm.addEventListener('click', addFilm);
 refs.sortName.addEventListener('click', sortItemByName);
 refs.sortDate.addEventListener('click',sortItemByDate);
+refs.filmsButton.addEventListener('click', burgerMenuMovie);
+refs.serialsButton.addEventListener('click', burgerMenuSerials);
 
 
 // SEARCH FILM
@@ -46,6 +51,36 @@ function searchSbm(e) {
       insertMarkup(result);
     })
 }
+// burger menu
+function burgerMenuMovie(e) {
+  e.preventDefault();
+  apiPopular.type = 'movie';
+  clearListItemFilm();
+  apiPopular.fetch().then(result => {
+    refs.itemGallery = result;
+    insertMarkup(result);
+  })
+}
+//----------------------------------
+function burgerMenuSerials(e) {
+  e.preventDefault();
+  apiPopular.type = 'tv';
+  clearListItemFilm();
+  apiPopular.fetch().then(result => {
+    refs.itemGallery = result;
+    insertMarkup(result);
+  })
+}
+//----------------------------------------
+// function burgerMenuMovie(e) {
+//   e.preventDefault();
+//   apiPopular.type = 'movie';
+//   clearListItemFilm();
+//   apiPopular.fetch().then(result => {
+//     refs.itemGallery = result;
+//     insertMarkup(result);
+//   })
+// }
 
 // Click Button and Buid page TV SHOW
 function refreshFilmChoice(e) {
