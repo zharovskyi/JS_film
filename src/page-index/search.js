@@ -1,8 +1,6 @@
-
 const head__search = document.querySelector(".head__search");
 const openlightbox = document.querySelector(".lightbox");
 const lightboxShadow = document.querySelector(".lightbox_shadow");
-// const closelightboxShadow = document.querySelector(".lightbox_shadow");
 const closelightboxBtn = document.querySelector(".lightbox_iteam_btn_submit");
 
 head__search.addEventListener("click", open);
@@ -12,8 +10,7 @@ function open() {
   };
   openlightbox.classList.add("lightbox_is_open");
   lightboxShadow.classList.add("lightbox_shadow_is_open");
-  window.addEventListener("keydown", closeKey)
-  console.log('lightboxShadow :', lightboxShadow);
+  window.addEventListener("keydown", closeKey);
 };
 
 function closeKey(event) {
@@ -31,7 +28,6 @@ function close () {
   };
   openlightbox.classList.remove("lightbox_is_open");
   lightboxShadow.classList.remove("lightbox_shadow_is_open");
-  console.log('lightboxShadow :', lightboxShadow);
 };
 
 closelightboxBtn.addEventListener("click", closeBtn);
