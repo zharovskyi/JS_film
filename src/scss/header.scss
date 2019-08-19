@@ -62,31 +62,13 @@ visibility: hidden;
   justify-content: space-around;
 }
 
-
-// .burger__menu{
-//   display: block;
-//   position: absolute;
-//   z-index: 1;
-//   width: 300px;
-//   height: 100%;
-//   background-color: #fff;
-// }
-// .burger__list{
-//   display: block;
-//   width: 100px;
-//   height: 100px;
-//   background-color: black;
-// }
-
-
-
 @media (min-width: 768px){
     .head__list{
         // width: 22%;
         // justify-content: space-between;
     }
     .whitepeper-svg{
-      visibility: hidden;
+      display: none;;
     }
     .search-svg{
       position: absolute;
@@ -111,7 +93,6 @@ visibility: hidden;
       background-color: black;
       margin-top: 4px;
     }
-
 }
 @media (min-width: 960px){
     .head__list{
