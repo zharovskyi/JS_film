@@ -34,9 +34,18 @@ export function compareTitle(a, b) {
   }
 // Sort by date New
 export function compareDateNew(a, b) {
-    const compA = new Date(a.release_date);
-    const compB = new Date(b.release_date);
-    
+    let compA; 
+    let compB; 
+    if(a.release_date) {
+      compA = new Date(a.release_date);
+      compB = new Date(b.release_date);
+    }else {
+      compA = new Date(a.first_air_date);
+      compB = new Date(b.first_air_date);
+    }
+    console.log('compA :', compA);
+    console.log('compB :', compB);
+
     let comparison = 0;
     if (compA > compB) {
       comparison = 1;
@@ -48,15 +57,21 @@ export function compareDateNew(a, b) {
 
 // Sort By Date OLd
 export function compareDateOld(a, b) {
-        const compA = new Date(a.release_date);
-        const compB = new Date(b.release_date);
-        
-        let comparison = 0;
-        if (compA < compB) {
-          comparison = 1;
-        } else if (compA > compB) {
-          comparison = -1;
-        }
-        return comparison;
-      }
+  let compA; 
+  let compB; 
+  if(a.release_date) {
+    compA = new Date(a.release_date);
+    compB = new Date(b.release_date);
+  }else {
+    compA = new Date(a.first_air_date);
+    compB = new Date(b.first_air_date);
+  }
+  let comparison = 0;
+  if (compA < compB) {
+    comparison = 1;
+  } else if (compA > compB) {
+    comparison = -1;
+  }
+  return comparison;
+}
 
