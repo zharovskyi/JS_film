@@ -6,23 +6,23 @@ import {compareTitle,comparePopularity,compareDateNew ,compareDateOld} from '../
 import '../partials/menu-burger.js'
 
 
-
+let itemGallery = [];
  const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
   gallery: document.querySelector('.gallery'),
   nav: document.querySelector('.nav__film'),
-  itemGallery: [],
   sortName: document.getElementById('sortName'),
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
- 
+  svgStar: document.querySelector('.svg-star'),
 };
+
 // BUILD MAIN PAGE LIST
 function markup() {
   apiPopular.type = 'movie';
   apiPopular.fetch().then(result => {
-    refs.itemGallery = result;
+    itemGallery = result;
     insertMarkup(result);
   })
 }
@@ -45,33 +45,89 @@ function searchSbm(e) {
   apiSearchMovie.fetch()
     .then(result => {
       clearListItemFilm();
-      refs.itemGallery = result;
+      itemGallery = result;
       insertMarkup(result);
     })
 }
 
-// add film to local storage
+console.log(refs.svgStar);
 
+// add film to local storage
+let localArr = [];
 function addFavoriteFilm(e) {
-  if(e.target.classList === "svg-star" || e.target.nodeName === 'use'){
-    
-   let local = e.target.closest('.movie');
-   console.log(local);
-   
-   localStorage.setItem('key', JSON.stringify(local));
- 
-  //  console.log(JSON.parse(localStorage.getItem(local)));
+  if(e.target.classList.contains("use")) { 
+    let idUse = e.target.dataset.id;
+    if(!localArr.find(el => el.id === +idUse)) {
+      let foundId = itemGallery.find(element => +element.id === +idUse);
+      localArr.push(foundId);
+      // console.log(refs.svgStar);
+      refs.svgStar.classList.remove("svg-star");
+      refs.svgStar.classList.add("svg-star-green");
+      console.log(localArr);
+    } else {
+      localArr = localArr.filter(element => +element.id !== +idUse);
+      refs.svgStar.classList.remove("svg-star-green");
+      refs.svgStar.classList.add("svg-star");
+    }
+    localStorage.setItem('movie', JSON.stringify(localArr));
+  } 
+}
+
+// Click Button and Buid page TV SHOW
+function refreshFilmChoice(e) {
+  if( e.target.classList[0] !== 'nav__main'){
+    return;
+  }
+  e.preventDefault();
+  const currentChoise = e.target.dataset.type;
+  clearListItemFilm();
+  if(e.target.dataset.type === 'favorite'){
+    // console.log(localArr);
+    // console.log('object',refs.itemGallery);
+
+  }else{
+    apiPopular.type = currentChoise;
+    apiPopular.fetch().then(result => {
+      itemGallery = result;
+      insertMarkup(result);
+    })
   }
   
 }
 
+
+// sort item byList
+function sortItemByName(e) {
+  const carrentChoice = e.currentTarget.value;
+  if(carrentChoice === 'title'){
+    itemGallery.sort(compareTitle);
+  }
+  else if(carrentChoice === 'popularity') {
+    itemGallery.sort(comparePopularity);
+  }
+  clearListItemFilm();
+  insertMarkup(itemGallery);
+}
+
+// sort by date
+function sortItemByDate(e) {
+  const carrentChoice = e.currentTarget.value;
+  if(carrentChoice === 'release_date'){
+    itemGallery.sort(compareDateNew);
+  }
+  else {
+    itemGallery.sort(compareDateOld);
+  }
+  clearListItemFilm();
+  insertMarkup(itemGallery);
+}
 // burger menu
 function burgerMenuMovie(e) {
   e.preventDefault();
   apiPopular.type = 'movie';
   clearListItemFilm();
   apiPopular.fetch().then(result => {
-    refs.itemGallery = result;
+    itemGallery = result;
     insertMarkup(result);
   })
 }
@@ -81,51 +137,9 @@ function burgerMenuSerials(e) {
   apiPopular.type = 'tv';
   clearListItemFilm();
   apiPopular.fetch().then(result => {
-    refs.itemGallery = result;
+    itemGallery = result;
     insertMarkup(result);
   })
-}
-
-// Click Button and Buid page TV SHOW
-function refreshFilmChoice(e) {
-  if( e.target.classList[0] !== 'nav__main'){
-    return
-  }
-  e.preventDefault();
-  const currentChoise = e.target.dataset.type;
-  clearListItemFilm();
-  apiPopular.type = currentChoise;
-  apiPopular.fetch().then(result => {
-    refs.itemGallery = result;
-    insertMarkup(result);
-  })
-}
-
-// sort item byName
-function sortItemByName(e) {
-  const carrentChoice = e.currentTarget.value;
-  if(carrentChoice === 'title'){
-    refs.itemGallery.sort(compareTitle);
-  }
-  else if(carrentChoice === 'popularity') {
-    refs.itemGallery.sort(comparePopularity);
-  }
-  clearListItemFilm();
-  insertMarkup(refs.itemGallery);
-}
-
-// sort by date
-function sortItemByDate(e) {
-  const carrentChoice = e.currentTarget.value;
-  console.log(refs.itemGallery);
-  if(carrentChoice === 'release_date'){
-    refs.itemGallery.sort(compareDateNew);
-  }
-  else {
-    refs.itemGallery.sort(compareDateOld);
-  }
-  clearListItemFilm();
-  insertMarkup(refs.itemGallery);
 }
 
 // Add list item to HtML
