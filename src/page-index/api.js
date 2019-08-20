@@ -16,7 +16,7 @@ import '../partials/menu-burger.js'
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
-  // localStorageItem: [],
+ 
 };
 // BUILD MAIN PAGE LIST
 function markup() {
@@ -60,7 +60,7 @@ function addFavoriteFilm(e) {
    
    localStorage.setItem('key', JSON.stringify(local));
  
-   console.log(JSON.parse(localStorage.getItem(local)));
+  //  console.log(JSON.parse(localStorage.getItem(local)));
   }
   
 }
