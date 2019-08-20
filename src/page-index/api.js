@@ -2,7 +2,7 @@
 import apiSearchMovie from '../apiSearchMovie.js'
 import apiPopular from '../apiPopular.js'
 import popularHbs from '../partials/popular.hbs'
-import {compareTitle,comparePopularity,compareDateNew,compareDateOld} from '../sortFunct'
+import {compareTitle,comparePopularity,compareDateNew ,compareDateOld} from '../sortFunct.js'
 import '../partials/menu-burger.js'
 
 
@@ -16,6 +16,7 @@ import '../partials/menu-burger.js'
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
+ 
 };
 // BUILD MAIN PAGE LIST
 function markup() {
@@ -31,9 +32,9 @@ refs.searchForm.addEventListener('submit', searchSbm);
 refs.nav.addEventListener('click', refreshFilmChoice);
 refs.sortName.addEventListener('click', sortItemByName);
 refs.sortDate.addEventListener('click',sortItemByDate);
-// refs.gallery.addEventListener('click', addFavoriteFilm);
 refs.filmsButton.addEventListener('click', burgerMenuMovie);
 refs.serialsButton.addEventListener('click', burgerMenuSerials);
+refs.gallery.addEventListener('click', addFavoriteFilm);
 
 
 // SEARCH FILM
@@ -48,6 +49,22 @@ function searchSbm(e) {
       insertMarkup(result);
     })
 }
+
+// add film to local storage
+
+function addFavoriteFilm(e) {
+  if(e.target.classList === "svg-star" || e.target.nodeName === 'use'){
+    
+   let local = e.target.closest('.movie');
+   console.log(local);
+   
+   localStorage.setItem('key', JSON.stringify(local));
+ 
+  //  console.log(JSON.parse(localStorage.getItem(local)));
+  }
+  
+}
+
 // burger menu
 function burgerMenuMovie(e) {
   e.preventDefault();
@@ -68,16 +85,6 @@ function burgerMenuSerials(e) {
     insertMarkup(result);
   })
 }
-//----------------------------------------
-// function burgerMenuMovie(e) {
-//   e.preventDefault();
-//   apiPopular.type = 'movie';
-//   clearListItemFilm();
-//   apiPopular.fetch().then(result => {
-//     refs.itemGallery = result;
-//     insertMarkup(result);
-//   })
-// }
 
 // Click Button and Buid page TV SHOW
 function refreshFilmChoice(e) {
@@ -93,21 +100,7 @@ function refreshFilmChoice(e) {
     insertMarkup(result);
   })
 }
-// add film to local storage
-// let localStorageItem = [];
-// function addFavoriteFilm(e) {
-//   const star = document.querySelector('.svg-star > use');
-  
-//   if(e.target === star){
-//   e.target.dataset.id = '1';
 
-     
-
-//   }else{
-//     console.log('object');
-//   }
-  
-// }
 // sort item byName
 function sortItemByName(e) {
   const carrentChoice = e.currentTarget.value;
@@ -124,6 +117,7 @@ function sortItemByName(e) {
 // sort by date
 function sortItemByDate(e) {
   const carrentChoice = e.currentTarget.value;
+  console.log(refs.itemGallery);
   if(carrentChoice === 'release_date'){
     refs.itemGallery.sort(compareDateNew);
   }
