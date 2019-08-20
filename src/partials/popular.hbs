@@ -1,5 +1,5 @@
 {{#each this}}
-<li class="movie">
+<li class="movie" data-id="{{id}}">
   <img class="movie-logo" src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="movie-title">
   <p class="movie-title">
     {{#if title}}
@@ -8,7 +8,7 @@
     {{name }} {{first_air_date}}
   {{/if}}
     </p>
-  <svg class="svg-bell" data-bell="bell">
+  <svg class="svg-bell">
     <use class="subscription_Bell" href="../img/sprite.svg#bell"></use>
   </svg>
   <svg class="svg-star">
