@@ -18,9 +18,16 @@
 }
 
 .footer_socialIcons_item {
-  width: 41px;
-  height: 41px;
+  width: 26px;
+  height: 26px;
   content: '';
+  fill: rgba(100%, 100%, 100%, 1);
+}
+
+.footer_socialIcons_item:hover {
+  fill: rgba(100%, 100%, 100%, 1);
+  fill: rgba(0%, 0%, 0%, 1);
+  transition: all 0.5s;
 }
 
 .footer_menu {
@@ -30,10 +37,18 @@
   margin: 0 auto;
   padding: 0;
   margin-bottom: 10px;
-  width: 356px;
+  width: 290px;
 }
 
 .footer_menu_text {
-  font-size: 16pt;
-  color: black;
+  font-size: 12pt;
+  color: rgba(0%, 0%, 0%, 0.7);
+  border-bottom: 1px solid #016492;
 }
+
+.footer_menu_text:hover {
+  color: rgba(0%, 0%, 0%, 1);
+  transition: all 0.5s;
+  border-bottom: 0px;
+}
+
