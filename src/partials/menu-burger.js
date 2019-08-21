@@ -8,7 +8,7 @@ function openBurgerWindow(e) {
     return;
   };
   burgerMenu.classList.add("burger__menu__open");
-  shadowBox.classList.add("shadow__box");
+  shadowBox.classList.add("shadow__box__active");
 }
 burgerButton.addEventListener("click" , openBurgerWindow);
 
@@ -17,7 +17,7 @@ function closeBurgerWindow (e) {
     return;
   };
   burgerMenu.classList.remove("burger__menu__open");
-  shadowBox.classList.remove("shadow__box");
+  shadowBox.classList.remove("shadow__box__active");
 }
 shadowBox.addEventListener("click", closeBurgerWindow);
 
