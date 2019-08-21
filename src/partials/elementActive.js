@@ -16,3 +16,13 @@ function underline(a) {
   selectedA = a;
   selectedA.classList.add('nav__main_is_open');
 }
+
+// Logo back to move
+
+const backToMove = document.querySelector('.head__logo-img');
+backToMove.addEventListener("click", LogoBack);
+
+function LogoBack(event) {
+  
+}
+
