@@ -2,7 +2,7 @@
 import apiSearchMovie from '../apiSearchMovie.js'
 import apiPopular from '../apiPopular.js'
 import popularHbs from '../partials/popular.hbs'
-import {compareTitle,comparePopularity,compareDateNew ,compareDateOld} from '../sortFunct.js'
+import { compareTitle, comparePopularity, compareDateNew, compareDateOld } from '../sortFunct.js'
 import '../partials/menu-burger.js'
 import '../page-index/search'
 
@@ -27,10 +27,19 @@ refs.searchForm.addEventListener('submit', searchSbm);
 refs.searchFormHeder.addEventListener('submit', searchSbm);
 refs.nav.addEventListener('click', refreshFilmChoice);
 refs.sortName.addEventListener('click', sortItemByName);
-refs.sortDate.addEventListener('click',sortItemByDate);
+refs.sortDate.addEventListener('click', sortItemByDate);
 refs.filmsButton.addEventListener('click', burgerMenuMovie);
 refs.serialsButton.addEventListener('click', burgerMenuSerials);
 refs.gallery.addEventListener('click', addFavoriteFilm);
+refs.gallery.addEventListener('click', movieSelected)
+
+
+function movieSelected(e) {
+  const id = e.target.closest('.movie').dataset.id;
+  console.log('id :', id);
+  localStorage.setItem("id", id);
+  return false;
+}
 
 // BUILD MAIN PAGE LIST
 function markup() {
@@ -63,7 +72,6 @@ function searchSbm(e) {
       insertMarkup(result);
     })
 }
-
 
 
 // add film to local storage
