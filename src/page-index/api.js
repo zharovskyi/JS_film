@@ -101,7 +101,10 @@ function buildFavouriteItem(item) {
 }
 
 let favoriteID = [];
+
+
 // Click Button and Buid page TV SHOW ,Favourite
+
 function refreshFilmChoice(e) {
   if( e.target.classList[0] !== 'nav__main'){
     return;
@@ -114,16 +117,16 @@ function refreshFilmChoice(e) {
     favoriteID = liFavorite.map(liFavorite => liFavorite.id);
     buildFavouriteItem(liFavorite);
 
-
   }else{
     apiPopular.type = currentChoise;
     apiPopular.fetch().then(result => {
       itemGallery = result;
 
       insertMarkup(result);
+      // console.log(' apiPopular.type :',  apiPopular.type);
+      // console.log('itemGallery :', itemGallery);
     })
   }
-
 }
 
 // function change color star

@@ -19,10 +19,20 @@ function underline(a) {
 
 // Logo back to move
 
-const backToMove = document.querySelector('.head__logo-img');
-backToMove.addEventListener("click", LogoBack);
+import '../page-index/api'
 
-function LogoBack(event) {
-  
+const backToMove = document.querySelector('.head__logo-img');
+const a2 = document.querySelector('.nav__main');
+
+backToMove.addEventListener("click", LogoBack);
+function LogoBack() {
+  // console.log('a2 :', a2);
+  if (a2.dataset.type !== 'move') {
+    a2.dataset.type === 'move';
+    // console.log('a2.dataset.type :', a2.dataset.type);
+  }
 }
+
+
+
 
