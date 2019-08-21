@@ -6,6 +6,7 @@ import {compareTitle,comparePopularity,compareDateNew ,compareDateOld} from '../
 import '../partials/menu-burger.js'
 
 
+
 let itemGallery = [];
  const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
@@ -15,8 +16,16 @@ let itemGallery = [];
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
-  svgStar: document.querySelector('.svg-star'),
+  
 };
+
+refs.searchForm.addEventListener('submit', searchSbm);
+refs.nav.addEventListener('click', refreshFilmChoice);
+refs.sortName.addEventListener('click', sortItemByName);
+refs.sortDate.addEventListener('click',sortItemByDate);
+refs.filmsButton.addEventListener('click', burgerMenuMovie);
+refs.serialsButton.addEventListener('click', burgerMenuSerials);
+refs.gallery.addEventListener('click', addFavoriteFilm);
 
 // BUILD MAIN PAGE LIST
 function markup() {
@@ -27,15 +36,6 @@ function markup() {
   })
 }
 markup();
-
-refs.searchForm.addEventListener('submit', searchSbm);
-refs.nav.addEventListener('click', refreshFilmChoice);
-refs.sortName.addEventListener('click', sortItemByName);
-refs.sortDate.addEventListener('click',sortItemByDate);
-refs.filmsButton.addEventListener('click', burgerMenuMovie);
-refs.serialsButton.addEventListener('click', burgerMenuSerials);
-refs.gallery.addEventListener('click', addFavoriteFilm);
-
 
 // SEARCH FILM
 function searchSbm(e) {
@@ -50,30 +50,37 @@ function searchSbm(e) {
     })
 }
 
-console.log(refs.svgStar);
+
 
 // add film to local storage
 let localArr = [];
+
 function addFavoriteFilm(e) {
   if(e.target.classList.contains("use")) { 
     let idUse = e.target.dataset.id;
     if(!localArr.find(el => el.id === +idUse)) {
       let foundId = itemGallery.find(element => +element.id === +idUse);
       localArr.push(foundId);
-      // console.log(refs.svgStar);
-      refs.svgStar.classList.remove("svg-star");
-      refs.svgStar.classList.add("svg-star-green");
-      console.log(localArr);
+      e.target.style.fill = '#77C1BB';
+      
     } else {
       localArr = localArr.filter(element => +element.id !== +idUse);
-      refs.svgStar.classList.remove("svg-star-green");
-      refs.svgStar.classList.add("svg-star");
+      e.target.style.fill = '#fff';
     }
     localStorage.setItem('movie', JSON.stringify(localArr));
   } 
 }
+// build favorite lisr
+function buildFavouriteItem(item) {
+  if(item == undefined || item == null){
+    console.log('add some thing');
+}else{
+  insertMarkup(item);
+}
+}
 
-// Click Button and Buid page TV SHOW
+let favoriteID = [];
+// Click Button and Buid page TV SHOW ,Favourite
 function refreshFilmChoice(e) {
   if( e.target.classList[0] !== 'nav__main'){
     return;
@@ -82,20 +89,26 @@ function refreshFilmChoice(e) {
   const currentChoise = e.target.dataset.type;
   clearListItemFilm();
   if(e.target.dataset.type === 'favorite'){
-    // console.log(localArr);
-    // console.log('object',refs.itemGallery);
+    let liFavorite = JSON.parse(localStorage.getItem('movie'));
+    favoriteID = liFavorite.map(liFavorite => liFavorite.id);
+    buildFavouriteItem(liFavorite);
+    
 
   }else{
     apiPopular.type = currentChoise;
     apiPopular.fetch().then(result => {
       itemGallery = result;
+      
       insertMarkup(result);
     })
   }
   
 }
 
+// function change color star
+// function changeColorStar(arr){
 
+// }
 // sort item byList
 function sortItemByName(e) {
   const carrentChoice = e.currentTarget.value;
