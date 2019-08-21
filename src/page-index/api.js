@@ -8,6 +8,7 @@ import '../page-index/search'
 
 
 
+
 let itemGallery = [];
  const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
@@ -18,6 +19,7 @@ let itemGallery = [];
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
+  favoritesButton: document.querySelector('.burger__search__favorites')
 
 
 };
@@ -29,6 +31,8 @@ refs.sortName.addEventListener('click', sortItemByName);
 refs.sortDate.addEventListener('click', sortItemByDate);
 refs.filmsButton.addEventListener('click', burgerMenuMovie);
 refs.serialsButton.addEventListener('click', burgerMenuSerials);
+refs.favoritesButton.addEventListener('click', burgerMenuFavorites);
+
 refs.gallery.addEventListener('click', addFavoriteFilm);
 refs.gallery.addEventListener('click', movieSelected)
 
@@ -86,7 +90,7 @@ function addFavoriteFilm(e) {
 
     } else {
       localArr = localArr.filter(element => +element.id !== +idUse);
-      e.target.style.fill = '#fff';
+
     }
     localStorage.setItem('movie', JSON.stringify(localArr));
   }
@@ -97,6 +101,7 @@ function buildFavouriteItem(item) {
     console.log('add some thing');
 }else{
   insertMarkup(item);
+  console.log('item', item);
 }
 }
 
@@ -121,18 +126,38 @@ function refreshFilmChoice(e) {
     apiPopular.type = currentChoise;
     apiPopular.fetch().then(result => {
       itemGallery = result;
-
       insertMarkup(result);
-      // console.log(' apiPopular.type :',  apiPopular.type);
-      // console.log('itemGallery :', itemGallery);
+      e.target.style.fill = '#fff';
+
     })
   }
 }
 
 // function change color star
-// function changeColorStar(arr){
 
-// }
+function changeColorStar(){
+  let getItemLocStor = JSON.parse(localStorage.getItem('movie'));
+  if(getItemLocStor === null || getItemLocStor === undefined){
+    return;
+  } else {
+    let idFromLocStor = getItemLocStor.map(el => +el.id);
+    console.log('idFromLocStor :', idFromLocStor);
+    let idFromDom = document.querySelectorAll(".use");
+     [...idFromDom].forEach(el => {
+       let idCurrentElement = +el.dataset.id
+      if(idFromLocStor.includes(idCurrentElement)){
+        el.target.closest('.svg-star').classList.toggle('svg-green');
+        // console.log('goood');
+      }
+      else{
+        // el.style.classList.toggle('.svg-star');
+        console.log('bed');
+      }
+     })
+
+  }
+}
+
 // sort item byList
 function sortItemByName(e) {
   const carrentChoice = e.currentTarget.value;
@@ -158,7 +183,7 @@ function sortItemByDate(e) {
   clearListItemFilm();
   insertMarkup(itemGallery);
 }
-// burger menu
+// --------------burger menu --> movies--------------------
 function burgerMenuMovie(e) {
   e.preventDefault();
   apiPopular.type = 'movie';
@@ -168,7 +193,7 @@ function burgerMenuMovie(e) {
     insertMarkup(result);
   })
 }
-//----------------------------------
+//--------------burger menu --> serials--------------------
 function burgerMenuSerials(e) {
   e.preventDefault();
   apiPopular.type = 'tv';
@@ -178,11 +203,19 @@ function burgerMenuSerials(e) {
     insertMarkup(result);
   })
 }
+//------------burger menu --> favorites----------------
+function burgerMenuFavorites(e) {
+  clearListItemFilm();
+  let liFavorite = JSON.parse(localStorage.getItem('movie'));
+  buildFavouriteItem(liFavorite);
+
+}
 
 // Add list item to HtML
-function insertMarkup(items) {
-  const markup = buildMarkup(items);
-  refs.gallery.insertAdjacentHTML('beforeend', markup);
+async function insertMarkup(items) {
+  const markup = await buildMarkup(items);
+  await refs.gallery.insertAdjacentHTML('beforeend', markup);
+  await changeColorStar();
 }
 
 // Build list Iem Hbs

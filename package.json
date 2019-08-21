@@ -50,6 +50,13 @@
     "webpack-dev-server": "^3.7.2",
     "webpackbar": "^4.0.0"
   },
+  "browserslist": [
+
+    "last 2 Chrome versions",
+
+    "last 2 Firefox versions"
+
+  ],
   "standard": {
     "env": [
       "node",
