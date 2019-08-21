@@ -90,7 +90,7 @@ function addFavoriteFilm(e) {
 
     } else {
       localArr = localArr.filter(element => +element.id !== +idUse);
-      
+
     }
     localStorage.setItem('movie', JSON.stringify(localArr));
   }
@@ -106,7 +106,10 @@ function buildFavouriteItem(item) {
 }
 
 let favoriteID = [];
+
+
 // Click Button and Buid page TV SHOW ,Favourite
+
 function refreshFilmChoice(e) {
   if( e.target.classList[0] !== 'nav__main'){
     return;
@@ -128,7 +131,6 @@ function refreshFilmChoice(e) {
 
     })
   }
-
 }
 
 // function change color star
@@ -151,7 +153,7 @@ function changeColorStar(){
         // el.style.classList.toggle('.svg-star');
         console.log('bed');
       }
-     })   
+     })
 
   }
 }

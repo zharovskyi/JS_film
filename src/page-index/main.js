@@ -33,11 +33,4 @@ class Foo {
 
 console.log(Foo.instance().getValue())
 
-const sort__name = document.querySelector(".selectFix");
-
-sort__name.addEventListener("click", FixLoding);
-function FixLoding(event) {
-  event.preventDefault()
-  console.log('...... :');
-}
 
