@@ -9,7 +9,7 @@ import '../page-index/search'
 
 
 let itemGallery = [];
- const refs = {
+const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
   searchFormHeder: document.querySelector('.headerSearch'),
   gallery: document.querySelector('.gallery'),
@@ -57,10 +57,10 @@ const lightboxShadow = document.querySelector(".lightbox_shadow");
 // SEARCH FILM
 function searchSbm(e) {
   // insert from search.js
-   if (openlightbox.classList[1] === "lightbox_is_open") {
-   openlightbox.classList.remove("lightbox_is_open");
-   lightboxShadow.classList.remove("lightbox_shadow_is_open");
-   };
+  if (openlightbox.classList[1] === "lightbox_is_open") {
+    openlightbox.classList.remove("lightbox_is_open");
+    lightboxShadow.classList.remove("lightbox_shadow_is_open");
+  };
   e.preventDefault();
   const inputValue = e.currentTarget.elements.film.value;
   apiSearchMovie.query = inputValue;
@@ -77,9 +77,9 @@ function searchSbm(e) {
 let localArr = [];
 
 function addFavoriteFilm(e) {
-  if(e.target.classList.contains("use")) {
+  if (e.target.classList.contains("use")) {
     let idUse = e.target.dataset.id;
-    if(!localArr.find(el => el.id === +idUse)) {
+    if (!localArr.find(el => el.id === +idUse)) {
       let foundId = itemGallery.find(element => +element.id === +idUse);
       localArr.push(foundId);
       e.target.style.fill = '#77C1BB';
@@ -93,29 +93,29 @@ function addFavoriteFilm(e) {
 }
 // build favorite lisr
 function buildFavouriteItem(item) {
-  if(item == undefined || item == null){
+  if (item == undefined || item == null) {
     console.log('add some thing');
-}else{
-  insertMarkup(item);
-}
+  } else {
+    insertMarkup(item);
+  }
 }
 
 let favoriteID = [];
 // Click Button and Buid page TV SHOW ,Favourite
 function refreshFilmChoice(e) {
-  if( e.target.classList[0] !== 'nav__main'){
+  if (e.target.classList[0] !== 'nav__main') {
     return;
   }
   e.preventDefault();
   const currentChoise = e.target.dataset.type;
   clearListItemFilm();
-  if(e.target.dataset.type === 'favorite'){
+  if (e.target.dataset.type === 'favorite') {
     let liFavorite = JSON.parse(localStorage.getItem('movie'));
     favoriteID = liFavorite.map(liFavorite => liFavorite.id);
     buildFavouriteItem(liFavorite);
 
 
-  }else{
+  } else {
     apiPopular.type = currentChoise;
     apiPopular.fetch().then(result => {
       itemGallery = result;
@@ -133,10 +133,10 @@ function refreshFilmChoice(e) {
 // sort item byList
 function sortItemByName(e) {
   const carrentChoice = e.currentTarget.value;
-  if(carrentChoice === 'title'){
+  if (carrentChoice === 'title') {
     itemGallery.sort(compareTitle);
   }
-  else if(carrentChoice === 'popularity') {
+  else if (carrentChoice === 'popularity') {
     itemGallery.sort(comparePopularity);
   }
   clearListItemFilm();
@@ -146,7 +146,7 @@ function sortItemByName(e) {
 // sort by date
 function sortItemByDate(e) {
   const carrentChoice = e.currentTarget.value;
-  if(carrentChoice === 'release_date'){
+  if (carrentChoice === 'release_date') {
     itemGallery.sort(compareDateNew);
   }
   else {

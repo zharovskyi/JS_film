@@ -247,6 +247,7 @@ body {
     width: 370px;
     height: 224px;
     margin: 0 auto;
+    display: block;
   }
 
   .film-media {
@@ -306,6 +307,7 @@ body {
   .iframe_trailer {
     width: 712px;
     height: 434px;
+    margin: 0 auto;
   }
 
   .feedback_content {
@@ -792,6 +794,8 @@ nav ul li a:hover {
     width: 130px;
   }
 }
+
+
 .moviePage {
   display: flex;
   margin-top: 85px;

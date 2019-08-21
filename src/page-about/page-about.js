@@ -33,8 +33,6 @@ class PageAbout {
 
   markupInfoList() {
     getMovie(this.movieId).then(movieInfoRes => {
-      // const genres = movieInfoRes.data.genres;
-      console.log('movieInfoRes :', movieInfoRes);
       const markup = infoList(movieInfoRes);
       this.refs.infoList.insertAdjacentHTML("afterbegin", markup)
     })
@@ -42,15 +40,15 @@ class PageAbout {
 
   markupTrailer() {
     getMovieTrailer(this.movieId).then(data => {
-      const trailerKey = data.results[0].key;
+      let trailer = data.results;
+      let min = 0;
+      let max = trailer.length - 1;
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      let trailerNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      const trailerKey = data.results[trailerNumber].key;
       this.refs.iframeTrailer.src =
         "http://www.youtube.com/embed/" + trailerKey;
-
-      if (data.results[0].key) {
-        const trailerKey = data.results[0].key;
-        this.refs.iframeTrailer.src =
-          "http://www.youtube.com/embed/" + trailerKey;
-      } else this.refs.iframeTrailer.src = "http://www.youtube.com/embed/";
     });
   }
 

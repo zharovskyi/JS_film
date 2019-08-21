@@ -1,17 +1,22 @@
 <section class="page-about">
-  <div class = "movieListInfo"></div>
-
-  <div class="trailer-media">
+  <!-- Spinner -->
+  <div class="spinner"></div>
+  <!-- Container that will showcase the info, links, trailer, recommended list -->
+  <div class="container">
+    <!-- Notifications -->
+    <div class="notification" id="added"> Added to Watchlist !</div>
+    <div class="notification" id="alreadyStored"> Already in watchlist !</div>
+    <div class = "movieListInfo"></div>
     <div class="film-trailer">
       <h2 class="subtitle">Trailer</h2>
       <iframe
         class="iframe_trailer"
-        width="330"
-        height="200"
+        width="720"
+        height="450"
         src=""
         frameborder="0"
-        encrypted-media;
-        picture-in-picture;
+        encrypted-media
+        picture-in-picture
         allowfullscreen
       ></iframe>
     </div>
@@ -25,9 +30,9 @@
         <ul class="frames-list"></ul>
       </div>
     </div>
-  </div>
   <div class="film-review">
     <h2 class="subtitle">Reviews</h2>
     <ul class="reviews-list"></ul>
   </div>
+
 </section>
