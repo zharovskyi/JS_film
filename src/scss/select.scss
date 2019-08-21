@@ -1,0 +1,20 @@
+.select_box {
+  background-color: #fff;
+  border: 0;
+  outline: 0;
+  background-color: #fff;
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .79em auto, 100%;
+  background-image: url(../img/sort-arrows-couple-pointing-up-and-down.svg);
+  padding: .6em 1.4em .5em .8em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+.select_box option:checked {
+  background-color: #77c1bb;
+  color: #fff;
+}

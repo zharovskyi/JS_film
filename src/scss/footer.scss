@@ -6,21 +6,35 @@
   justify-content: center;
 
 }
+
 .footer_socialIcons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin: 0 auto;
   padding: 0;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  width: 200px;
+  // margin-top: 15px;
+  // margin-bottom: 10px;
+  // width: 200px;
+  margin-top: 12px;
+  margin-bottom: 7px;
+  width: 170px;
 }
 
 .footer_socialIcons_item {
-  width: 41px;
-  height: 41px;
+  width: 26px;
+  height: 26px;
   content: '';
+  fill: rgba(100%, 100%, 100%, 0.6);
+  border-radius: 40px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.footer_socialIcons_item:hover {
+  fill: rgba(0%, 0%, 0%, 1);
+  fill: rgba(100%, 100%, 100%, 1);
+  box-shadow: 0px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
 }
 
 .footer_menu {
@@ -30,10 +44,17 @@
   margin: 0 auto;
   padding: 0;
   margin-bottom: 10px;
-  width: 356px;
+  width: 290px;
 }
 
 .footer_menu_text {
-  font-size: 16pt;
-  color: black;
+  font-size: 12pt;
+  color: rgba(0%, 0%, 0%, 0.7);
+  border-bottom: 1px solid #3f4154;
+}
+
+.footer_menu_text:hover {
+  color: rgba(0%, 0%, 0%, 1);
+  transition: all 0.2s;
+  border-bottom: 0px;
 }
