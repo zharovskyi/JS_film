@@ -1,3 +1,5 @@
+
+
 const baseUrl = 'https://api.themoviedb.org/3/';
 
 export default {
@@ -6,6 +8,7 @@ export default {
   page: 1,
   language: 'en-US',
   query: 'fast',
+  
 
   fetch() {
 
@@ -14,6 +17,8 @@ export default {
     return fetch(baseUrl + requestParam)
       .then(res => res.json())
       .then(parseRes => {
+        let idItem = [];
+        idItem = parseRes.results.map(el => el.id);
         return parseRes.results;
       })
   },

@@ -15,7 +15,6 @@ export default {
     return fetch(baseUrl + requestParam)
       .then(res => res.json())
       .then(parseRes => {
-        console.log('movie:', parseRes.results);
         return parseRes.results;
 
       })
