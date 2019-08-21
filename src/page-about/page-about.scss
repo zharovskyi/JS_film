@@ -1,0 +1,904 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.in-hidden {
+  display: none;
+}
+
+table {
+  max-width: 1300px;
+}
+
+.green-line {
+  background-color: #addad6;
+}
+
+.table-answ {
+  padding-left: 40px;
+}
+
+td {
+  font-weight: normal;
+  color: #bfbfbf;
+  padding: 5px 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .page-about_part1 {
+    margin: 10px auto;
+    margin-bottom: 20px;
+    max-width: 767px;
+    max-height: auto;
+    padding: 2px 5px 0px 5px;
+  }
+
+  .movie-descr_title {
+    display: none;
+  }
+
+  .image-mov_section {
+    margin: 0 auto;
+    display: block;
+    max-height: 178px;
+  }
+
+  .image-mov {
+    display: block;
+    margin: 0 auto;
+    width: 360px;
+    height: 170px;
+    // background: url('../img/img_test_first1/Dark_time.png') no-repeat;
+    background-size: 350px, 170px;
+  }
+
+  .image-movie_title_section {
+    position: relative;
+  }
+
+  .image-mov_title {
+    position: absolute;
+    top: 160px;
+    left: 25px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .image-mov_butData {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px auto;
+    max-width: 340px;
+  }
+
+  .image-mov_but {
+    background-color: brown;
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .data-down {
+    font-size: 13px;
+    color: #89c9c4;
+  }
+
+  .movie-descr_section {
+    margin: 5px auto;
+    max-width: 340px;
+    color: #757575;
+  }
+
+  table {
+    max-width: 100%;
+  }
+
+  .green-line {
+    background-color: #addad6;
+  }
+
+  .table-answ {
+    padding-left: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page-about_part1 {
+    display: flex;
+    max-width: 1023px;
+    margin: 10px auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: teal;
+}
+
+.page-about_section2 {
+  width: 330px;
+  margin: 0 auto;
+}
+
+.trailerAndMedia {
+  display: flex;
+  flex-direction: column;
+}
+
+.trailer {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  margin-bottom: 38px;
+  order: 2;
+}
+
+.section2_subtitle {
+  margin-bottom: 14px;
+}
+
+.feedback_item {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.feedback_photo {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+.feedback_content {
+  width: 270px;
+}
+
+.film-media {
+  order: 1;
+  margin: 0 auto;
+}
+
+.frames {
+  display: none;
+}
+
+.actors {
+  width: 330px;
+}
+
+.actors_item {
+  list-style: none;
+  width: 56px;
+  text-align: center;
+}
+
+.actor_photo {
+  width: 56px;
+  height: 56px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.actor_image {
+  position: relative;
+  top: -15px;
+}
+
+.slick-arrow.slick-prev {
+  left: 0;
+}
+
+.slick-arrow.slick-next {
+  right: 0;
+}
+
+.slick-list.draggable {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.actors .slick-arrow {
+  position: absolute;
+  top: 34px;
+}
+
+.hidden_text {
+  display: none;
+}
+
+.hidden_text.show_text {
+  display: inline;
+}
+
+@media screen and (min-width: 768px) {
+  .page-about_section2 {
+    width: 720px;
+  }
+
+  .trailer {
+    order: 0;
+  }
+
+  .frames {
+    display: block;
+  }
+
+  .iframe_trailer {
+    width: 370px;
+    height: 224px;
+    margin: 0 auto;
+  }
+
+  .film-media {
+    display: flex;
+    justify-content: space-between;
+    width: 720px;
+  }
+
+  .feedback_content {
+    width: 650px;
+  }
+
+  .actors {
+    width: 304px;
+  }
+
+  .frames {
+    width: 340px;
+  }
+
+  .actors-list,
+  .frames-list {
+    display: flex;
+    margin-bottom: 90px;
+  }
+
+  .no_image {
+    top: 0;
+  }
+
+  .frames_item {
+    list-style: none;
+    width: 84px;
+  }
+
+  .frames_picture {
+    height: 84px;
+    width: 84px;
+    margin: 0 auto;
+  }
+
+  .frames_image {
+    height: 84px;
+    object-fit: cover;
+  }
+
+  .actors .slick-arrow {
+    top: 44px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page-about_section2 {
+    width: 978px;
+  }
+
+  .iframe_trailer {
+    width: 712px;
+    height: 434px;
+  }
+
+  .feedback_content {
+    width: 880px;
+  }
+
+  .film-media {
+    width: 978px;
+  }
+
+  .actors {
+    width: 400px;
+  }
+
+  .frames {
+    width: 500px;
+  }
+
+  .actors_item {
+    width: 80px;
+  }
+
+  .actor_photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .frames_picture {
+    width: 120px;
+    height: 106px;
+  }
+
+  .frames_image {
+    height: 120px;
+  }
+
+  .feedback_photo {
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+  }
+
+  .actors .slick-arrow {
+    top: 55px;
+  }
+}
+
+/* Global attributes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f5f5f5;
+}
+div:focus,
+button:focus,
+span:focus {
+  outline: none !important;
+}
+li {
+  list-style-type: none;
+}
+/* MATERIAL DESIGN ICONS CSS */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.hot {
+  color: #e1302a;
+  font-size: 30px;
+}
+/* Navigation menu */
+nav {
+  width: 100%;
+  text-align: center;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+nav ul li {
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+nav ul li a {
+  text-decoration: none;
+  font-family: 'Montserrat SemiBold';
+  color: #2f3640;
+  font-size: 16px;
+  position: relative;
+}
+nav ul li a:hover {
+  color: #e1302a;
+}
+/* Title Section */
+.title {
+  margin-left: 10px;
+}
+.title h1 {
+  font-size: 80px;
+  font-family: 'Paytone One';
+  color: #2f3640;
+}
+.title p {
+  font-size: 18px;
+  color: #444;
+  font-family: 'Paytone One';
+}
+#quote {
+  min-height: 70px;
+  margin: 15px 0;
+  transition: all 0.2s;
+  color: #e1302a;
+  font-family: 'Montserrat Regular';
+  font-weight: bold;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Popular movies section */
+.popular {
+  position: relative;
+  margin: 50px 0;
+}
+.popularTitle {
+  font-family: 'Paytone One';
+  color: #444;
+  font-size: 25px;
+  margin-left: 10px;
+  position: absolute;
+  left: 5%;
+  top: -40px;
+  display: flex;
+  align-items: center;
+}
+.popularTitle span {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.popular a {
+  position: absolute;
+  top: -25px;
+  right: 6%;
+  text-decoration: none;
+  color: #444;
+  font-family: 'Paytone One';
+  transition: 0.2s ease;
+}
+.popular a:hover {
+  color: #2f3640;
+}
+/* See more section */
+.seeMore {
+  text-align: center;
+}
+.seeMore h2 {
+  font-size: 16px;
+  font-family: 'Montserrat Thin';
+  color: #2f3640;
+}
+.seeMore_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.seeMore_buttons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Paytone One';
+  color: #555;
+  font-size: 17px;
+  margin: 0 10px;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  width: 110px;
+  height: 35px;
+  transition: 0.2s ease;
+}
+.seeMore_buttons a:hover {
+  color: #e1302a;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* MOVIE & TV SHOW CARDS */
+.scroll {
+  margin: 15px auto;
+  overflow: hidden;
+  width: 88.5%;
+  display: flex;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transition: 0.5s ease;
+}
+.scroll .card:first-child {
+  margin-left: 0px;
+}
+.scroll .card {
+  margin: 0px 3px;
+  position: relative;
+  height: 450px;
+  transition: 0.5s ease;
+}
+.scroll .card img {
+  height: 450px;
+}
+.scroll .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: 0.3s ease-in-out;
+  padding: 10px;
+  transform: translateY(-500px);
+}
+.scroll .overlay .movie {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.scroll .card .overlay .movie a {
+  display: flex;
+  position: static;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  width: 70px;
+  height: 30px;
+  border: none;
+  background-color: #fff;
+  color: #333;
+  font-family: 'Montserrat SemiBold';
+  margin: 10px 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  outline: none !important;
+}
+.scroll .card .overlay .movie a:hover {
+  background-color: #2f3640;
+  color: #fff;
+}
+.scroll .movie p {
+  font-family: 'Montserrat Medium';
+  color: #fff;
+  font-size: 14px;
+  margin-left: 5px;
+}
+.movie p span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.movie p i {
+  margin-left: 5px;
+  margin-bottom: 2px;
+  font-size: 22px;
+}
+.star {
+  color: gold;
+}
+.date {
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.35);
+  color: #f2f2f2;
+}
+.scroll .overlay h2 {
+  font-family: 'Montserrat Black';
+  width: auto;
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px;
+}
+.scroll .card:hover .overlay {
+  transform: translateY(0px);
+}
+/* About section */
+.about {
+  text-align: center;
+}
+.about h1 {
+  font-family: 'Paytone One';
+  font-size: 65px;
+  color: #444;
+}
+.about p {
+  font-family: 'Montserrat Medium';
+  color: #444;
+  font-size: 16px;
+}
+.about a {
+  text-decoration: none;
+  color: #e1302a;
+  font-family: 'Montserrat SemiBold';
+}
+.about_boxes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.box {
+  width: 240px;
+  height: 237px;
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  transition: 0.4s ease;
+  cursor: default;
+}
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2);
+}
+.box h3 {
+  font-family: 'Paytone One';
+  font-size: 20px;
+  color: #2f3640;
+}
+.box p {
+  font-family: 'Montserrat Regular';
+  font-size: 16px;
+  color: #444;
+}
+.boxImg i {
+  font-size: 45px;
+  color: #e1302a;
+}
+
+/* For tablets and mobile phones. */
+@media (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 1px;
+  }
+  #movies,
+  #tvShows,
+  #nowPlaying {
+    overflow-x: scroll;
+  }
+  .scroll .overlay {
+    background-color: rgba(0, 0, 0, 0.45);
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 965px) {
+  footer .deadpool img {
+    margin-bottom: -5%;
+  }
+}
+@media (max-width: 982px) {
+  .about_boxes .box {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 765px) {
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'links'
+      'credits'
+      'deadpool';
+  }
+  footer .links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 675px) {
+  .title h1 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 522px) {
+  .title h1 {
+    font-size: 40px;
+  }
+  .title span img {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media (max-width: 425px) {
+  .popular {
+    margin-top: 10px;
+  }
+  .popularTitle {
+    margin-left: 10px;
+    position: initial;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .popular a {
+    position: initial;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 10px;
+    color: #444;
+    font-family: 'Paytone One';
+    transition: 0.2s ease;
+  }
+  .title {
+    text-align: center;
+  }
+  .title p {
+    font-family: 'Montserrat Medium';
+    margin-top: 5px;
+  }
+  nav ul {
+    margin: 0;
+    justify-content: center;
+  }
+}
+@media (max-width: 370px) {
+  .title h1 {
+    font-size: 30px;
+  }
+  .title span img {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (max-width: 350px) {
+  .title {
+    margin: 0;
+  }
+  footer .deadpool img {
+    margin-bottom: -10px;
+    width: 250px;
+  }
+  footer .credits {
+    margin: 15px 0;
+  }
+  footer .credits img {
+    width: 130px;
+  }
+}
+.moviePage {
+  display: flex;
+  margin-top: 85px;
+  margin-bottom: 36px;
+}
+.movieListInfo {
+  margin-bottom: 34px;
+}
+.movieInfo {
+  text-align: flex;
+  justify-content: space-between;
+  opacity: 0.8;
+  height: 33px;
+  width: 95%;
+  padding: 5px 0 0 17px;
+}
+
+.movieInfo:nth-child(2n+1) /* represents every odd row of an HTML table */ {
+  background-color: #76c3bc;
+}
+
+/* страна & слоган */
+.movieInfoSpacer1 {
+  display: inline;
+  // margin-right: 0px;
+}
+
+/* режиссер & сценарий */
+.movieInfoSpacer2 {
+  display: inline;
+  margin-right: 59px;
+}
+
+/* жанр */
+.movieInfoSpacer3 {
+  display: inline;
+  margin-right: 102px;
+}
+
+/* время */
+.movieInfoSpacer4 {
+  display: inline;
+  margin-right: 92px;
+}
+/* Movie/tv show poster - START. */
+.poster {
+  padding: 23px;
+  margin-top: 0px;
+}
+.poster img {
+  max-width: 400px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.shadowMenu {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+}
+.info {
+  flex-direction: column;
+  font-size: 18px;
+  padding: 5px;
+}
+#smallText {
+  font-size: 12px;
+  color: #333;
+  font-family: 'Montserrat SemiBold';
+}
+.info h2 {
+  font-family: 'Paytone One', Arial, Helvetica, sans-serif;
+  color: #372c48;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.info li a {
+  color: #555;
+}
+.info li {
+  color: #444;
+  font-family: 'Montserrat Regular';
+  font-size: 18px;
+}
+.info strong {
+  color: #2f3640;
+}
+.info > * {
+  cursor: default;
+}
+.plot {
+  font-size: 16px;
+}
+.plot h3 {
+  font-family: 'Paytone One';
+  color: #372c48;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 22px;
+}
+.plot p {
+  color: #444;
+  font-family: 'Montserrat Regular';
+  opacity: 0.54;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  width: 90%;
+}

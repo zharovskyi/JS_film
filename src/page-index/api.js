@@ -2,9 +2,10 @@
 import apiSearchMovie from '../apiSearchMovie.js'
 import apiPopular from '../apiPopular.js'
 import popularHbs from '../partials/popular.hbs'
-import {compareTitle,comparePopularity,compareDateNew ,compareDateOld} from '../sortFunct.js'
+import { compareTitle, comparePopularity, compareDateNew, compareDateOld } from '../sortFunct.js'
 import '../partials/menu-burger.js'
 import '../page-index/search'
+
 
 
 
@@ -27,12 +28,21 @@ refs.searchForm.addEventListener('submit', searchSbm);
 refs.searchFormHeder.addEventListener('submit', searchSbm);
 refs.nav.addEventListener('click', refreshFilmChoice);
 refs.sortName.addEventListener('click', sortItemByName);
-refs.sortDate.addEventListener('click',sortItemByDate);
+refs.sortDate.addEventListener('click', sortItemByDate);
 refs.filmsButton.addEventListener('click', burgerMenuMovie);
 refs.serialsButton.addEventListener('click', burgerMenuSerials);
 refs.favoritesButton.addEventListener('click', burgerMenuFavorites);
 
 refs.gallery.addEventListener('click', addFavoriteFilm);
+refs.gallery.addEventListener('click', movieSelected)
+
+
+function movieSelected(e) {
+  const id = e.target.closest('.movie').dataset.id;
+  console.log('id :', id);
+  localStorage.setItem("id", id);
+  return false;
+}
 
 // BUILD MAIN PAGE LIST
 function markup() {
@@ -67,7 +77,6 @@ function searchSbm(e) {
 }
 
 
-
 // add film to local storage
 let localArr = [];
 
@@ -81,7 +90,7 @@ function addFavoriteFilm(e) {
 
     } else {
       localArr = localArr.filter(element => +element.id !== +idUse);
-      e.target.style.fill = '#fff';
+      
     }
     localStorage.setItem('movie', JSON.stringify(localArr));
   }
@@ -110,22 +119,43 @@ function refreshFilmChoice(e) {
     favoriteID = liFavorite.map(liFavorite => liFavorite.id);
     buildFavouriteItem(liFavorite);
 
-
   }else{
     apiPopular.type = currentChoise;
     apiPopular.fetch().then(result => {
       itemGallery = result;
-
       insertMarkup(result);
+      e.target.style.fill = '#fff';
+
     })
   }
 
 }
 
 // function change color star
-// function changeColorStar(arr){
 
-// }
+function changeColorStar(){
+  let getItemLocStor = JSON.parse(localStorage.getItem('movie'));
+  if(getItemLocStor === null || getItemLocStor === undefined){
+    return;
+  } else {
+    let idFromLocStor = getItemLocStor.map(el => +el.id);
+    console.log('idFromLocStor :', idFromLocStor);
+    let idFromDom = document.querySelectorAll(".use");
+     [...idFromDom].forEach(el => {
+       let idCurrentElement = +el.dataset.id
+      if(idFromLocStor.includes(idCurrentElement)){
+        el.target.closest('.svg-star').classList.toggle('svg-green');
+        // console.log('goood');
+      }
+      else{
+        // el.style.classList.toggle('.svg-star');
+        console.log('bed');
+      }
+     })   
+
+  }
+}
+
 // sort item byList
 function sortItemByName(e) {
   const carrentChoice = e.currentTarget.value;
@@ -180,9 +210,10 @@ function burgerMenuFavorites(e) {
 }
 
 // Add list item to HtML
-function insertMarkup(items) {
-  const markup = buildMarkup(items);
-  refs.gallery.insertAdjacentHTML('beforeend', markup);
+async function insertMarkup(items) {
+  const markup = await buildMarkup(items);
+  await refs.gallery.insertAdjacentHTML('beforeend', markup);
+  await changeColorStar();
 }
 
 // Build list Iem Hbs

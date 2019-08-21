@@ -1,19 +1,21 @@
 {{#each this}}
-<li class="movie">
-  <img class="movie-logo" src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="movie-title">
-  <p class="movie-title">
-    {{#if title}}
-    {{title }} ({{release_date}})
-  {{else}}
-    {{name }} ({{first_air_date}})
-  {{/if}}
+<li class="movie" data-id="{{id}}">
+  <a href="../about.html">
+    <img class="movie-logo" src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="movie-title">
+    <p class="movie-title">
+      {{#if title}}
+      {{title }} {{release_date}}
+      {{else}}
+      {{name }} {{first_air_date}}
+      {{/if}}
     </p>
-  <svg class="svg-bell">
-    <use class="subscription_Bell" href="../img/sprite.svg#bell"></use>
-  </svg>
-  <svg class="svg-star">
-    <use class="use" data-id="{{id}}" href="../img/sprite.svg#star-full"></use>
-  </svg>
-  <p class="average">{{vote_average}}</p>
+    <svg class="svg-bell">
+      <use class="subscription_Bell" href="../img/sprite.svg#bell"></use>
+    </svg>
+    <svg class="svg-star">
+      <use class="use" data-id="{{id}}" href="../img/sprite.svg#star-full"></use>
+    </svg>
+    <p class="average">{{vote_average}}</p>
+  </a>
 </li>
 {{/each}}
