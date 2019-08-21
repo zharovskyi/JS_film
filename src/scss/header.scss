@@ -52,24 +52,24 @@ a {
   width: 25px;
   height: 17px;
 }
-
-// .span__text{
-// visibility: hidden;
-// }
-// .span__text::after{
-// visibility: hidden;
-// }
-// .sort__text{
-//   padding: 0 ;
-//   // padding-left: 10px;
-//   line-height: 0;
-//   display: block;
-//   font-size: 16px;
-//   margin-right: 20px;
-// }
-.sort {
+.span__text{
+visibility: hidden;
+}
+.span__text::after{
+visibility: hidden;
+}
+.sort__text{
+  padding: 0 ;
+  line-height: 0;
+  display: block;
+  font-size: 16px;
+  font-family: 'Lato';
+  margin-right: 20px;
+  font-weight: 500;
+}
+.sort  {
   display: flex;
-  width: 360px;
+  width: 350px;
   justify-content: space-between;
   height: 25px;
   padding-top: 20px;
