@@ -35,7 +35,7 @@ class PageAbout {
     getMovie(this.movieId).then(movieInfoRes => {
       // const genres = movieInfoRes.data.genres;
       console.log('movieInfoRes :', movieInfoRes);
-      const markup = infoList(movieInfoRes.production_countries);
+      const markup = infoList(movieInfoRes);
       this.refs.infoList.insertAdjacentHTML("afterbegin", markup)
     })
   }
