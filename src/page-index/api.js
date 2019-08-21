@@ -4,11 +4,13 @@ import apiPopular from '../apiPopular.js'
 import popularHbs from '../partials/popular.hbs'
 import {compareTitle,comparePopularity,compareDateNew ,compareDateOld} from '../sortFunct.js'
 import '../partials/menu-burger.js'
+import '../page-index/search'
 
 
 
  const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
+  searchFormHeder: document.querySelector('.headerSearch'),
   gallery: document.querySelector('.gallery'),
   nav: document.querySelector('.nav__film'),
   itemGallery: [],
@@ -16,7 +18,7 @@ import '../partials/menu-burger.js'
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
- 
+
 };
 // BUILD MAIN PAGE LIST
 function markup() {
@@ -29,6 +31,7 @@ function markup() {
 markup();
 
 refs.searchForm.addEventListener('submit', searchSbm);
+refs.searchFormHeder.addEventListener('submit', searchSbm);
 refs.nav.addEventListener('click', refreshFilmChoice);
 refs.sortName.addEventListener('click', sortItemByName);
 refs.sortDate.addEventListener('click',sortItemByDate);
@@ -36,9 +39,17 @@ refs.filmsButton.addEventListener('click', burgerMenuMovie);
 refs.serialsButton.addEventListener('click', burgerMenuSerials);
 refs.gallery.addEventListener('click', addFavoriteFilm);
 
+// insert from search.js
+const openlightbox = document.querySelector(".lightbox");
+const lightboxShadow = document.querySelector(".lightbox_shadow");
 
 // SEARCH FILM
 function searchSbm(e) {
+  // insert from search.js
+   if (openlightbox.classList[1] === "lightbox_is_open") {
+   openlightbox.classList.remove("lightbox_is_open");
+   lightboxShadow.classList.remove("lightbox_shadow_is_open");
+   };
   e.preventDefault();
   const inputValue = e.currentTarget.elements.film.value;
   apiSearchMovie.query = inputValue;
@@ -54,15 +65,15 @@ function searchSbm(e) {
 
 function addFavoriteFilm(e) {
   if(e.target.classList === "svg-star" || e.target.nodeName === 'use'){
-    
+
    let local = e.target.closest('.movie');
    console.log(local);
-   
+
    localStorage.setItem('key', JSON.stringify(local));
- 
+
   //  console.log(JSON.parse(localStorage.getItem(local)));
   }
-  
+
 }
 
 // burger menu

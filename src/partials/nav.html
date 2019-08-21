@@ -5,16 +5,18 @@
 </nav>
 <section class="sort container">
   <h2 class="sort__text">Сategories</h2>
-  <div class="sort__name">
-  <select class="sort__name" name="sortName" id="sortName">
-    <option value="" hidden disabled selected>By name</option>
-    <option value="title">By title</option>
-    <option value="popularity">Popular</option>
-  </select>
-  <select name="sortDate" id="sortDate">
-    <option value="" hidden disabled selected>By date</option>
-    <option value="release_date">New</option>
-    <option value="release_dateOld">Premieres</option>
-  </select>
-</div>
+  <form action="#">
+  <div class="sort__name selectFix">
+    <select class="sort__name select_box" name="sortName" id="sortName">
+      <option value="" hidden disabled selected>By name</option>
+      <option value="title">By title</option>
+      <option value="popularity">Popular</option>
+    </select>
+    <select class="select_box" name="sortDate" id="sortDate">
+      <option value="" hidden disabled selected>By date</option>
+      <option value="release_date">New</option>
+      <option value="release_dateOld">Premieres</option>
+    </select>
+  </div>
+</form>
 </section>

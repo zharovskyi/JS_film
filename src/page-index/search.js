@@ -10,6 +10,9 @@ function open() {
   if (event.target === lightboxShadow) {
     return;
   };
+  if(window.innerWidth > 768) {
+    return;
+  };
 
   openlightbox.classList.add("lightbox_is_open");
   lightboxShadow.classList.add("lightbox_shadow_is_open");
