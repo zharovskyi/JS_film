@@ -117,7 +117,10 @@ function buildFavouriteItem(item) {
 }
 
 let favoriteID = [];
+
+
 // Click Button and Buid page TV SHOW ,Favourite
+
 function refreshFilmChoice(e) {
   if (e.target.classList[0] !== 'nav__main') {
     return;
@@ -140,7 +143,6 @@ function refreshFilmChoice(e) {
 
     })
   }
-
 }
 
 // function change color star
