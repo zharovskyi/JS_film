@@ -10,9 +10,9 @@ function openBurgerWindow(e) {
   burgerMenu.classList.add("burger__menu__open");
   shadowBox.classList.add("shadow__box");
 }
-burgerButton.addEventListener("click" , openBurgerWindow);
+burgerButton.addEventListener("click", openBurgerWindow);
 
-function closeBurgerWindow (e) {
+function closeBurgerWindow(e) {
   if (event.target !== event.currentTarget) {
     return;
   };
