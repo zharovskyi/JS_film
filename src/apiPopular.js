@@ -17,8 +17,18 @@ export default {
     return fetch(baseUrl + requestParam)
       .then(res => res.json())
       .then(parseRes => {
-        let idItem = [];
-        idItem = parseRes.results.map(el => el.id);
+        // let idItem = [];
+        // let localArr = [];
+        // idItem = parseRes.results.map(el => el.id);
+        // let local = JSON.parse(localStorage.getItem('movie'));
+        // if(local === null || local === undefined){
+        //   console.log('null','empty storage');
+        // }else{
+          
+        //   console.log('local :', local);
+        // }
+        // console.log(local);
+        // console.log(idItem);
         return parseRes.results;
       })
   },
