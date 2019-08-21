@@ -272,6 +272,7 @@ body {
   .frames-list {
     display: flex;
     margin-bottom: 90px;
+    width: 400px;
   }
 
   .no_image {
@@ -795,7 +796,6 @@ nav ul li a:hover {
   }
 }
 
-
 .moviePage {
   display: flex;
   margin-top: 85px;
@@ -819,27 +819,10 @@ nav ul li a:hover {
 
 /* страна & слоган */
 .movieInfoSpacer1 {
-  display: inline;
-  // margin-right: 0px;
+  display: inline-block;
+  width: 150px;
 }
 
-/* режиссер & сценарий */
-.movieInfoSpacer2 {
-  display: inline;
-  margin-right: 59px;
-}
-
-/* жанр */
-.movieInfoSpacer3 {
-  display: inline;
-  margin-right: 102px;
-}
-
-/* время */
-.movieInfoSpacer4 {
-  display: inline;
-  margin-right: 92px;
-}
 /* Movie/tv show poster - START. */
 .poster {
   padding: 23px;

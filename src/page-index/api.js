@@ -83,10 +83,22 @@ function addFavoriteFilm(e) {
       let foundId = itemGallery.find(element => +element.id === +idUse);
       localArr.push(foundId);
       e.target.style.fill = '#77C1BB';
-
+      const added = document.getElementById("added");
+      added.innerHTML = "Added to favorites!";
+      added.classList.add("added");
+      setTimeout(() => {
+        added.classList.remove("added");
+      }, 1500);
     } else {
       localArr = localArr.filter(element => +element.id !== +idUse);
       e.target.style.fill = '#fff';
+      const alreadyStored = document.getElementById("alreadyStored");
+      alreadyStored.innerHTML = "Remove from favorites!";
+      alreadyStored.classList.add("alreadyStored");
+      setTimeout(() => {
+        alreadyStored.classList.remove("alreadyStored");
+      }, 1500);
+
     }
     localStorage.setItem('movie', JSON.stringify(localArr));
   }

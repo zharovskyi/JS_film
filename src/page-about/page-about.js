@@ -8,8 +8,8 @@ import actors from "../page-about/actorsList.hbs";
 import frames from "../page-about/framesList.hbs";
 import reviews from "../page-about/reviewsList.hbs";
 
-// import $ from "jquery";
-// import slick from "slick-carusel";
+import $ from "jquery";
+import slick from "slick-carousel";
 
 class PageAbout {
   constructor(id) {
@@ -57,10 +57,10 @@ class PageAbout {
       const markup = actors(data.credits.cast);
       this.refs.actorsList.insertAdjacentHTML("afterbegin", markup);
 
-      // $(".actors-list").slick({
-      //   slidesToShow: 4,
-      //   slidesToScroll: 1
-      // });
+      $(".actors-list").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1
+      });
     });
   }
 
@@ -69,10 +69,10 @@ class PageAbout {
       const markup = frames(data.backdrops);
       this.refs.framesList.insertAdjacentHTML("afterbegin", markup);
 
-      // $(".frames-list").slick({
-      //   slidesToShow: 4,
-      //   slidesToScroll: 1
-      // });
+      $(".frames-list").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1
+      });
     });
   }
 
