@@ -18,6 +18,7 @@ let itemGallery = [];
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
+  favoritesButton: document.querySelector('.burger__search__favorites')
 
 
 };
@@ -29,6 +30,8 @@ refs.sortName.addEventListener('click', sortItemByName);
 refs.sortDate.addEventListener('click',sortItemByDate);
 refs.filmsButton.addEventListener('click', burgerMenuMovie);
 refs.serialsButton.addEventListener('click', burgerMenuSerials);
+refs.favoritesButton.addEventListener('click', burgerMenuFavorites);
+
 refs.gallery.addEventListener('click', addFavoriteFilm);
 
 // BUILD MAIN PAGE LIST
@@ -89,6 +92,7 @@ function buildFavouriteItem(item) {
     console.log('add some thing');
 }else{
   insertMarkup(item);
+  console.log('item', item);
 }
 }
 
@@ -147,7 +151,7 @@ function sortItemByDate(e) {
   clearListItemFilm();
   insertMarkup(itemGallery);
 }
-// burger menu
+// --------------burger menu --> movies--------------------
 function burgerMenuMovie(e) {
   e.preventDefault();
   apiPopular.type = 'movie';
@@ -157,7 +161,7 @@ function burgerMenuMovie(e) {
     insertMarkup(result);
   })
 }
-//----------------------------------
+//--------------burger menu --> serials--------------------
 function burgerMenuSerials(e) {
   e.preventDefault();
   apiPopular.type = 'tv';
@@ -166,6 +170,13 @@ function burgerMenuSerials(e) {
     itemGallery = result;
     insertMarkup(result);
   })
+}
+//------------burger menu --> favorites----------------
+function burgerMenuFavorites(e) {
+  clearListItemFilm();
+  let liFavorite = JSON.parse(localStorage.getItem('movie'));
+  buildFavouriteItem(liFavorite);
+
 }
 
 // Add list item to HtML
