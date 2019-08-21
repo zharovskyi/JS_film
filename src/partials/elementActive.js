@@ -1,8 +1,6 @@
 const activeMenu = document.querySelector('.nav__film');
 let selectedA;
 
-console.log('activeMenu.onclick :', activeMenu.onclick);
-
 activeMenu.onclick = function(event) {
   let target = event.target;
 
