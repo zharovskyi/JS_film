@@ -50,7 +50,7 @@ body {
   position: relative;
   top: 0;
   left: 0;
-  &::before{
+  &::after{
     background-image: url('../img/icon-play.jpg');
     content: "";
     position: absolute;
