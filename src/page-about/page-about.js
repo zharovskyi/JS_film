@@ -59,7 +59,11 @@ class PageAbout {
 
       $(".actors-list").slick({
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows:false,
+        autoplay: true,
+        autoplaySpeed:2000,
+
       });
     });
   }
@@ -71,7 +75,11 @@ class PageAbout {
 
       $(".frames-list").slick({
         slidesToShow: 4,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows:false,
+
+        autoplay: true,
+        autoplaySpeed:2000,
       });
     });
   }
@@ -101,18 +109,19 @@ class PageAbout {
     this.refs.reviewsList.addEventListener("click", e => {
       if (
         e.target.nodeName === "BUTTON" &&
-        e.target.textContent === "..."
+        e.target.textContent === "...more"
       ) {
-        const hiddenSpan = e.target.previousSibling;
+        const hiddenSpan = document.querySelector('.hidden_text')
         hiddenSpan.classList.add("show_text");
         e.target.textContent = "collapse";
       } else if (
         e.target.nodeName === "BUTTON" &&
         e.target.textContent === "collapse"
       ) {
-        const hiddenSpan = e.target.previousSibling;
+        const hiddenSpan = document.querySelector('.hidden_text')
+
         hiddenSpan.classList.remove("show_text");
-        e.target.textContent = "...";
+        e.target.textContent = "...more";
       }
     });
   }

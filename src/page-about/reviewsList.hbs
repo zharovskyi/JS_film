@@ -1,14 +1,15 @@
 {{#each this}}
-<div class="review_item">
-  <div class="review_content">
+<li class="review_item">
+  <section class="review_content">
     <h3 class="feedback_author">{{author}}</h3>
 
     {{#if feedbackLength}}
-    <span class="feedback_text {{feedbackLength}}">{{smallText}}<span class="hidden_text">{{extendedText}}</span><button
-        class="hidden_textbtn">...</button></span>
+    <p class="feedback_text {{feedbackLength}}">{{smallText}}<span class="hidden_text">{{extendedText}}</span>
+      <button class="hidden_textbtn">...more</button>
+    </p>
     {{else}}
     <span class="feedback_text">{{smallText}}</span>
     {{/if}}
-  </div>
-</div>
+  </sec>
+</li>
 {{/each}}
