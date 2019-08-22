@@ -21,17 +21,15 @@ function underline(a) {
 
 import '../page-index/api'
 
-const backToMove = document.querySelector('.head__logo-img');
-const a2 = document.querySelector('.nav__main');
+// const backToMove = document.querySelector('.head__logo-img');
+// const a2 = document.querySelector('.nav__main');
 
-backToMove.addEventListener("click", LogoBack);
-function LogoBack() {
-  // console.log('a2 :', a2);
-  if (a2.dataset.type !== 'move') {
-    a2.dataset.type === 'move';
-    // console.log('a2.dataset.type :', a2.dataset.type);
-  }
-}
+// backToMove.addEventListener("click", LogoBack);
+// function LogoBack() {
+//   if (a2.dataset.type !== 'move') {
+//     a2.dataset.type === 'move';
+//   }
+// }
 
 
 

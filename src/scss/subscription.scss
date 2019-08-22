@@ -11,7 +11,7 @@
   visibility: hidden;
   transform: translate(-50%, -50%);
   border-radius: 1%;
-
+  box-shadow: 6px 6px rgba(0, 0, 0, 0.25);
 }
 
 .subscription_is_open {
@@ -47,7 +47,7 @@
   border-bottom: 2px solid grey;
   background-color: transparent;
   color: grey;
-  font-size: 14pt;
+  font-size: 13pt;
   font-family: 'Lato';
   outline: none;
   margin-top: 16px;
@@ -95,7 +95,7 @@
   visibility: hidden;
   transform: translate(-50%, -50%);
   border-radius: 1%;
-  padding-left: 20px;
+  box-shadow: 6px 6px rgba(0, 0, 0, 0.25);
 }
 
 .subscription_thenks_open {
@@ -104,13 +104,16 @@
 
 .subscription_thenks_headline {
   margin-bottom: 33px;
+  padding-left: 17px;
+  margin-top: 34px;
 }
 
 .subscription_thenks_text {
   color: grey;
   width: 90%;
   margin-bottom: 121px;
-  font-size: 16pt;
+  font-size: 14pt;
+  padding-left: 17px;
 }
 
 .subscription_thenks_btn {
