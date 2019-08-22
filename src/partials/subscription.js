@@ -15,7 +15,6 @@ function open(event) {
   const result = event.target.classList.contains("subscription_Bell");
   const result2 = event.target.classList.contains("svg-bell");
   if (result || result2) {
-    console.log('open');
     openSubscription.classList.add("subscription_is_open");
     lightboxShadow.classList.add("lightbox_shadow_is_open");
     window.addEventListener("keydown", closeKey);
