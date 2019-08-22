@@ -41,7 +41,7 @@ body {
   height: 177px;
   position: absolute;
   left: 50%;
-  top: 49%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -230,6 +230,9 @@ body {
     background-image: url('../img/shadow.png');
     display: block;
     width: 354px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
     .movie-title {
       top: 82%;
@@ -270,7 +273,7 @@ body {
     height: 249px;
     position: absolute;
     left: 50%;
-    top: 49%;
+    top: 50%;
     transform: translate(-50%, -50%);
   }
   .movie-title {
