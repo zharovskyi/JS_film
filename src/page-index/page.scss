@@ -33,7 +33,7 @@ body {
 }
 
 .movie::before {
-  content: "";
+  content: '';
   background-image: url('../img/shadow.png');
   display: block;
   width: 346px;
@@ -103,6 +103,9 @@ body {
     transform: scale(1.5);
   }
 }
+.svg-green {
+  fill: '#77C1BB';
+}
 .average{
   color: #fff;
   position: absolute;
@@ -113,11 +116,11 @@ body {
   width: 35px;
   height: 20px;
 }
-.burger__button{
+.burger__button {
   border-style: none;
   background-color: #77c1bb;
 }
-.burger__menu{
+.burger__menu {
   // visibility: hidden;
   padding: 0;
   margin: 0;
@@ -132,7 +135,7 @@ body {
   height: 100%;
   background-color: #fff;
 }
-.burger__menu__open{
+.burger__menu__open {
   // visibility: visible;
   padding: 0;
   margin: 0;
@@ -147,25 +150,25 @@ body {
   height: 100%;
   background-color: #fff;
 }
-.burger__list{
+.burger__list {
   display: flex;
   padding-left: 20px;
   padding-top: 40px;
   width: 180px;
- }
- .burger__svg{
-   display: block;
-   width: 30px;
-   height: 30px;
-   fill: #6f677b;
-   margin-right: 40px;
- }
- .burger__span{
-   padding-top: 5px;
-   font-family: 'Lato';
+}
+.burger__svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+  fill: #6f677b;
+  margin-right: 40px;
+}
+.burger__span {
+  padding-top: 5px;
+  font-family: 'Lato';
   //  font-weight: 600;
- }
- .shadow__box{
+}
+.shadow__box {
   padding: 0;
   margin: 0;
   position: absolute;
@@ -174,8 +177,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(191, 191, 191, 0);
- }
- .shadow__box__active{
+}
+.shadow__box__active {
   padding: 0;
   margin: 0;
   position: absolute;
@@ -184,9 +187,9 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(191, 191, 191, 0);
- }
+}
 
-@media (min-width:767px) {
+@media (min-width: 767px) {
   .gallery {
     width: 750px;
     display: flex;
@@ -195,6 +198,10 @@ body {
     height: auto;
     margin: 0 auto;
   }
+
+  .shadow__box {
+    display: none;
+   }
 
   .movie-logo {
     width: 353px;
@@ -217,7 +224,7 @@ body {
     left: 0;
   }
   .movie::before {
-    content: "";
+    content: '';
     background-image: url('../img/shadow.png');
     display: block;
     width: 354px;
@@ -241,35 +248,92 @@ body {
       left: 4%;
     }
   }
-
 }
-  @media (min-width:1023px) {
-    .gallery {
-      width: 1000px;
-    }
+@media (min-width: 1023px) {
+  .gallery {
+    width: 1000px;
+  }
 
-    .movie-logo {
-      width: 481px;
-      height: 248px;
-    }
+  .movie-logo {
+    width: 481px;
+    height: 248px;
+  }
 
-    .movie::before {
-      content: "";
-      background-image: url('../img/shadow.png');
-      display: block;
-      background-size: cover;
-      width: 481px;
-      height: 251px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .movie-title {
-      top: 90%;
-      left: 4%;
-    }
-
-
+  .movie::before {
+    content: '';
+    background-image: url('../img/shadow.png');
+    display: block;
+    background-size: cover;
+    width: 481px;
+    height: 251px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .movie-title {
+    top: 90%;
+    left: 4%;
+  }
 }
 
+.remove{
+	outline: none !important;
+	display: none;
+	padding: 5px;
+	border-radius: 3px;
+	border: none;
+	background-color: #e1302a;
+	color: #fff;
+	font-family: "Montserrat Medium", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	transition: 0.25s;
+	cursor: pointer;
+	box-shadow: 0 3px rgba(0,0,0,0.1);
+}
+.remove:hover{
+	background-color: #fff;
+	color: #2f3640;
+	box-shadow: 4px 4px rgba(0,0,0,0.15);
+}
+.notification{
+	z-index: 999;
+	background-color: #00C853;
+	padding: 10px;
+	border-radius: 3px;
+	width: auto;
+	font-family: "Montserrat Medium", Arial, Helvetica, sans-serif;
+	color: #fff;
+	position: fixed;
+	left: 30px;
+	bottom: -50px;
+	opacity: 0;
+	box-shadow: 0 5px 5px rgba(0,0,0,0.35);
+}
+#alreadyStored{
+	background-color: #e1302a;
+}
+.notification.added{
+	animation: notification 2s forwards;
+}
+.notification.alreadyStored{
+	animation: notification 2s forwards;
+}
+@keyframes notification{
+	0%{
+		opacity: 0;
+		transform:translateY(-50px);
+	}
+	50%{
+		opacity: 1;
+		transform: translateY(-100px);
+	}
+	80%{
+		opacity: 1;
+		transform: translateY(-100px);
+	}
+	100%{
+		opacity: 0;
+		transform: translateY(-100px);
+	}
+}
