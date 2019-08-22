@@ -8,8 +8,10 @@ import '../page-index/search'
 
 
 
-
+let favoriteID = [];
 let itemGallery = [];
+let localArr = [];
+let favorites;
 const refs = {
   searchForm: document.querySelector('.lightbox_iteam_btn'),
   searchFormHeder: document.querySelector('.headerSearch'),
@@ -19,9 +21,7 @@ const refs = {
   sortDate: document.getElementById('sortDate'),
   filmsButton: document.querySelector('.burger__search__films'),
   serialsButton: document.querySelector('.burger__search__serials'),
-  favoritesButton: document.querySelector('.burger__search__favorites')
-
-
+  favoritesButton: document.querySelector('.burger__search__favorites'),
 };
 
 refs.searchForm.addEventListener('submit', searchSbm);
@@ -36,23 +36,43 @@ refs.favoritesButton.addEventListener('click', burgerMenuFavorites);
 refs.gallery.addEventListener('click', addFavoriteFilm);
 refs.gallery.addEventListener('click', movieSelected)
 
-
-function movieSelected(e) {
-  const id = e.target.closest('.movie').dataset.id;
-  console.log('id :', id);
-  localStorage.setItem("id", id);
-  return false;
-}
-
 // BUILD MAIN PAGE LIST
 function markup() {
   apiPopular.type = 'movie';
   apiPopular.fetch().then(result => {
     itemGallery = result;
-    insertMarkup(result);
+    insertMarkup(setFavorites(result));
   })
 }
 markup();
+
+function movieSelected(e) {
+  const id = e.target.closest('.movie').dataset.id;
+  // console.log('id :', id);
+  // console.log('e.target :', e.target);
+  // console.log('e.target.closest.movie.dataset.id :', e.target.closest('.movie').dataset.id);
+  localStorage.setItem("id", id);
+  
+  return false;
+}
+
+function setFavorites (items) {
+  let getItemLocStor = JSON.parse(localStorage.getItem('movie'));
+    if(getItemLocStor === null || getItemLocStor === undefined){
+      return items;
+    } else {
+      let idFromLocStor = getItemLocStor.map(el => +el.id);
+      return [...items].map(el => {
+        if(idFromLocStor.includes(el.id)) {
+          el.favorites = true;
+          favorites = el.favorites;
+        }
+        return el;
+      })
+    }
+}
+
+
 
 // insert from search.js
 const openlightbox = document.querySelector(".lightbox");
@@ -78,7 +98,7 @@ function searchSbm(e) {
 
 
 // add film to local storage
-let localArr = [];
+
 
 function addFavoriteFilm(e) {
   if (e.target.classList.contains("use")) {
@@ -86,7 +106,9 @@ function addFavoriteFilm(e) {
     if (!localArr.find(el => el.id === +idUse)) {
       let foundId = itemGallery.find(element => +element.id === +idUse);
       localArr.push(foundId);
+      
       e.target.style.fill = '#77C1BB';
+   
       const added = document.getElementById("added");
       added.innerHTML = "Added to favorites!";
       added.classList.add("added");
@@ -96,6 +118,12 @@ function addFavoriteFilm(e) {
     } else {
       localArr = localArr.filter(element => +element.id !== +idUse);
       e.target.style.fill = '#fff';
+     
+      if(refs.nav.childNodes[5].classList.contains('nav__main_is_open')) {
+        console.log('refs.nav :');
+        console.dir(refs.nav);
+        e.target.closest('.movie').remove();
+      }
       const alreadyStored = document.getElementById("alreadyStored");
       alreadyStored.innerHTML = "Remove from favorites!";
       alreadyStored.classList.add("alreadyStored");
@@ -107,7 +135,7 @@ function addFavoriteFilm(e) {
     localStorage.setItem('movie', JSON.stringify(localArr));
   }
 }
-// build favorite lisr
+// build favorite list
 function buildFavouriteItem(item) {
   if (item == undefined || item == null) {
     console.log('add some thing');
@@ -115,8 +143,6 @@ function buildFavouriteItem(item) {
     insertMarkup(item);
   }
 }
-
-let favoriteID = [];
 
 
 // Click Button and Buid page TV SHOW ,Favourite
@@ -131,6 +157,7 @@ function refreshFilmChoice(e) {
   if (e.target.dataset.type === 'favorite') {
     let liFavorite = JSON.parse(localStorage.getItem('movie'));
     favoriteID = liFavorite.map(liFavorite => liFavorite.id);
+    itemGallery = favoriteID;
     buildFavouriteItem(liFavorite);
 
 
@@ -139,7 +166,6 @@ function refreshFilmChoice(e) {
     apiPopular.fetch().then(result => {
       itemGallery = result;
       insertMarkup(result);
-      e.target.style.fill = '#fff';
 
     })
   }
@@ -156,14 +182,15 @@ function changeColorStar(){
     console.log('idFromLocStor :', idFromLocStor);
     let idFromDom = document.querySelectorAll(".use");
      [...idFromDom].forEach(el => {
-       let idCurrentElement = +el.dataset.id
+       let idCurrentElement = +el.dataset.id;
       if(idFromLocStor.includes(idCurrentElement)){
-        el.target.closest('.svg-star').classList.toggle('svg-green');
-        // console.log('goood');
+        el.classList.add('svg-green');
+        // el.closest('.movie').remove();
       }
       else{
-        // el.style.classList.toggle('.svg-star');
+        el.classList.remove('svg-green');
         console.log('bed');
+       
       }
      })
 
@@ -229,6 +256,10 @@ async function insertMarkup(items) {
   await refs.gallery.insertAdjacentHTML('beforeend', markup);
   await changeColorStar();
 }
+//  function insertMarkup(items) {
+//   const markup =  buildMarkup(items);
+//   refs.gallery.insertAdjacentHTML('beforeend', markup);
+// }
 
 // Build list Iem Hbs
 function buildMarkup(items) {
