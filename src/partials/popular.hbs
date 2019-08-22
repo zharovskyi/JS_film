@@ -2,6 +2,7 @@
 <li class="movie" data-id="{{id}}">
   <a href="../about.html">
     <img class="movie-logo" src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="movie-title">
+  </a>
     <p class="movie-title">
       {{#if title}}
       {{title }} {{release_date}}
@@ -16,6 +17,5 @@
       <use class="use" data-id="{{id}}" href="../img/sprite.svg#star-full"></use>
     </svg>
     <p class="average">{{vote_average}}</p>
-  </a>
 </li>
 {{/each}}

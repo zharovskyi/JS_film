@@ -8,8 +8,8 @@ import actors from "../page-about/actorsList.hbs";
 import frames from "../page-about/framesList.hbs";
 import reviews from "../page-about/reviewsList.hbs";
 
-// import $ from "jquery";
-// import slick from "slick-carusel";
+import $ from "jquery";
+import slick from "slick-carousel";
 
 class PageAbout {
   constructor(id) {
@@ -33,8 +33,6 @@ class PageAbout {
 
   markupInfoList() {
     getMovie(this.movieId).then(movieInfoRes => {
-      // const genres = movieInfoRes.data.genres;
-      console.log('movieInfoRes :', movieInfoRes);
       const markup = infoList(movieInfoRes);
       this.refs.infoList.insertAdjacentHTML("afterbegin", markup)
     })
@@ -42,15 +40,15 @@ class PageAbout {
 
   markupTrailer() {
     getMovieTrailer(this.movieId).then(data => {
-      const trailerKey = data.results[0].key;
+      let trailer = data.results;
+      let min = 0;
+      let max = trailer.length - 1;
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      let trailerNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      const trailerKey = data.results[trailerNumber].key;
       this.refs.iframeTrailer.src =
         "http://www.youtube.com/embed/" + trailerKey;
-
-      if (data.results[0].key) {
-        const trailerKey = data.results[0].key;
-        this.refs.iframeTrailer.src =
-          "http://www.youtube.com/embed/" + trailerKey;
-      } else this.refs.iframeTrailer.src = "http://www.youtube.com/embed/";
     });
   }
 
@@ -59,10 +57,10 @@ class PageAbout {
       const markup = actors(data.credits.cast);
       this.refs.actorsList.insertAdjacentHTML("afterbegin", markup);
 
-      // $(".actors-list").slick({
-      //   slidesToShow: 4,
-      //   slidesToScroll: 1
-      // });
+      $(".actors-list").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1
+      });
     });
   }
 
@@ -71,10 +69,10 @@ class PageAbout {
       const markup = frames(data.backdrops);
       this.refs.framesList.insertAdjacentHTML("afterbegin", markup);
 
-      // $(".frames-list").slick({
-      //   slidesToShow: 4,
-      //   slidesToScroll: 1
-      // });
+      $(".frames-list").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1
+      });
     });
   }
 
