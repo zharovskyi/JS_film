@@ -1,22 +1,27 @@
 {{#each this}}
 <li class="movie" data-id="{{id}}">
   <a href="../about.html">
+    {{#if backdrop_path}}
     <img class="movie-logo" src="https://image.tmdb.org/t/p/w500{{backdrop_path}}" alt="movie-title">
+    {{else}}
+    <img class="movie-logo" src="../img/not-found.pnggity" alt="movie-title">
+    {{/if}}
+
   </a>
-    <p class="movie-title">
-      {{#if title}}
-      {{title }} ({{release_date}})
-      {{else}}
-      {{name }} ({{first_air_date}})
-      {{/if}}
-    </p>
-    <svg class="svg-bell">
-      <use class="subscription_Bell" href="../img/sprite.svg#bell"></use>
-    </svg>
-    {{#if favorites}}
-    <svg class="svg-star svg-green">
-      {{else}}
-      <svg class="svg-star">
+  <p class="movie-title">
+    {{#if title}}
+    {{title }} ({{release_date}})
+    {{else}}
+    {{name }} ({{first_air_date}})
+    {{/if}}
+  </p>
+  <svg class="svg-bell">
+    <use class="subscription_Bell" href="../img/sprite.svg#bell"></use>
+  </svg>
+  {{#if favorites}}
+  <svg class="svg-star svg-green">
+    {{else}}
+    <svg class="svg-star">
       {{/if}}
       <use class="use" data-id="{{id}}" href="../img/sprite.svg#star-full"></use>
     </svg>
