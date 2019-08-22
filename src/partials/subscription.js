@@ -7,13 +7,14 @@ const lightboxShadow = document.querySelector(".lightbox_shadow");
 const openSubscriptionThenks = document.querySelector(".subscription_btn");
 const SubscriptionThenks = document.querySelector(".subscription_thenks");
 const closeSubscriptionThenks = document.querySelector(".subscription_thenks_btn");
+const formSubscription = document.querySelector(".subscription_container");
+
 
 subscriptionBell.addEventListener("click", open);
 function open(event) {
   const result = event.target.classList.contains("subscription_Bell");
   const result2 = event.target.classList.contains("svg-bell");
   if (result || result2) {
-    console.log('open');
     openSubscription.classList.add("subscription_is_open");
     lightboxShadow.classList.add("lightbox_shadow_is_open");
     window.addEventListener("keydown", closeKey);
@@ -21,11 +22,8 @@ function open(event) {
   return;
 }
 
-openSubscriptionThenks.addEventListener("click", openThenks);
+formSubscription.addEventListener("submit", openThenks);
 function openThenks() {
-  if (event.target !== event.currentTarget) {
-    return;
-  }
   openSubscription.classList.remove("subscription_is_open");
   SubscriptionThenks.classList.add("subscription_thenks_open");
 }
