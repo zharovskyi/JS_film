@@ -19,7 +19,6 @@ module.exports = {
   entry: {
     index: './src/page-index/main.js',
     about: './src/page-about/main.js',
-    contacts: './src/page-contacts/main.js'
   },
 
   // how to write the compiled files to disk
@@ -116,12 +115,6 @@ module.exports = {
       chunks: ['about'],
       filename: 'about.html'
     }),
-    new HtmlWebpackPlugin({
-      template: './src/page-contacts/tmpl.html',
-      inject: 'body',
-      chunks: ['contacts'],
-      filename: 'contacts.html'
-    }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].[contenthash].css'
@@ -131,11 +124,7 @@ module.exports = {
   // https://webpack.js.org/configuration/optimization/
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true
-      }),
+      // new UglifyJsPlugin(),
       new OptimizeCssAssetsPlugin({})
     ]
   }

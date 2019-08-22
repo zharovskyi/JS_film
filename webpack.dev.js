@@ -13,7 +13,6 @@ module.exports = {
   entry: {
     index: './src/page-index/main.js',
     about: './src/page-about/main.js',
-    contacts: './src/page-contacts/main.js'
   },
 
   // https://webpack.js.org/configuration/dev-server/
@@ -109,12 +108,6 @@ module.exports = {
       inject: true,
       chunks: ['about'],
       filename: 'about.html'
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/page-contacts/tmpl.html',
-      inject: true,
-      chunks: ['contacts'],
-      filename: 'contacts.html'
     }),
     new WebpackBar()
   ]

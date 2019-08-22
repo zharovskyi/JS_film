@@ -1,41 +1,166 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>About</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="cache-control" content="no-cache"/>
-  <meta http-equiv="pragma" content="no-cache"/>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport"
-        content="width=device-width,user-scalable=0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-<link href="about.e6709b27d7e01771c703.css" rel="stylesheet"></head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <nav class="nav__film">
-  <a class="nav__main" data-type="movie" href="#">FILM</a>
-  <a class="nav__main" data-type="tv" href="#">TV SHOW</a>
-  <a class="nav__main" href="#">FAVORITES</a>
-</nav>
+    <title>About</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+  <link href="about.ce7ab107ac127edbf2ed.css" rel="stylesheet"></head>
+  <body>
+    <header class="head">
+  <nav class="head__nav">
+    <ul class="head__list">
+      <button class="head__item burger__button">
+        <a href="#" class="head__link">
+          <svg class="whitepeper-svg">
+            <use href="img/header.svg#menu"></use>
+          </svg>
+        </a>
+      </button>
+      <li class="head__item">
+        <a href="./index.html" class="head__link-logo">
+          <img class="head__logo-img" src="data:image/png;base64,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" alt="" />
+        </a>
+      </li>
+    </ul>
+    <a class="head__search" href="#">
+      <svg class="search-svg">
+        <use href="img/symbol-defs.svg#icon-search"></use>
+      </svg>
+      <form class="headerSearch">
+          <input class="headerSearch_iteam_btn_submit" type="submit" value=" " />
+          <input
+            name="film"
+            class="headerSearch_iteam_btn_search"
+            type="text"
+            placeholder="Search"
+            autocomplete="off"
+          />
+        </form>
+      <div class="lightbox">
+        <div class="lightbox_iteam">
+          <p class="lightbox_iteam_text">Mooogle</p>
+        </div>
+        <form class="lightbox_iteam_btn">
+          <input class="lightbox_iteam_btn_submit" type="submit" value=" " />
+          <input
+            name="film"
+            class="lightbox_iteam_btn_search"
+            type="text"
+            placeholder="Search"
+            autocomplete="off"
+          />
+        </form>
+      </div>
+      <div class="lightbox_shadow"></div>
+    </a>
+  </nav>
+</header>
 
+    <section class="page-about container">
+  <div class="movieListInfo"></div>
+  <div class="film-trailer">
+    <h2 class="subtitle">Trailer</h2>
+    <iframe
+      class="iframe_trailer"
+      width="720"
+      height="450"
+      src=""
+      frameborder="0"
+      encrypted-media
+      picture-in-picture
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="film-media">
+    <div class="actors">
+      <h2 class="subtitle">Actors</h2>
+      <ul class="actors-list"></ul>
+    </div>
+    <div class="film-frames">
+      <h2 class="subtitle">Frames</h2>
+      <ul class="frames-list"></ul>
+    </div>
+  </div>
+  <div class="film-review">
+    <h2 class="subtitle">Reviews</h2>
+    <ul class="reviews-list"></ul>
+  </div>
+</section>
 
-  <h1 class="page-title">
-    <i class="fas fa-user-secret"></i>
-    ABOUT
-  </h1>
-
-  <span class="spacer"></span>
+    <span class="spacer"></span>
 <span class="spacer"></span>
-<footer>
-  <ul>
+<footer class="footer">
+  <ul class="footer_socialIcons">
     <li>
-      <a href="">Blog post</a>
+      <a
+        href="https://www.facebook.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="footer_socialIcons_item">
+          <use
+            href="img/footer_icon/sprite-footer.svg#facebook-logo-button"
+          ></use>
+        </svg>
+      </a>
     </li>
     <li>
-      <a href="">Github repository</a>
+      <a
+        href="https://www.youtube.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="footer_socialIcons_item">
+          <use
+            href="img/footer_icon/sprite-footer.svg#play-button-silhouette"
+          ></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+        <svg class="footer_socialIcons_item">
+          <use href="img/footer_icon/sprite-footer.svg#twitter"></use>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="footer_socialIcons_item">
+          <use
+            href="img/footer_icon/sprite-footer.svg#social-instagram-circle"
+          ></use>
+        </svg>
+      </a>
+    </li>
+  </ul>
+  <ul class="footer_menu">
+    <li>
+      <a class="footer_menu_text" href="#">Home</a>
+    </li>
+    <li>
+      <a class="footer_menu_text" href="#">Films</a>
+    </li>
+    <li>
+      <a class="footer_menu_text" href="#">TV series</a>
+    </li>
+    <li>
+      <a class="footer_menu_text" href="#">Copyright holders</a>
     </li>
   </ul>
 </footer>
 
-<script type="text/javascript" src="about.39e99a882897da4f3d76.js"></script></body>
+  <script type="text/javascript" src="about.1daebff9c87b2f72978b.js"></script></body>
 </html>
