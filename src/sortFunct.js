@@ -43,8 +43,6 @@ export function compareDateNew(a, b) {
       compA = new Date(a.first_air_date);
       compB = new Date(b.first_air_date);
     }
-    console.log('compA :', compA);
-    console.log('compB :', compB);
 
     let comparison = 0;
     if (compA > compB) {
