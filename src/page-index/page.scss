@@ -35,26 +35,28 @@ body {
 .movie::before {
   content: '';
   background-image: url('../img/shadow.png');
+  opacity: 0.9;
   display: block;
-  width: 346px;
-  height: 178px;
+  width: 347px;
+  height: 177px;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 49%;
   transform: translate(-50%, -50%);
 }
 
 .movie:hover {
   top: -4px;
   left: -4px;
+  z-index: 1;
   position: relative;
   top: 0;
   left: 0;
-  &::after{
+  &::before{
     background-image: url('../img/icon-play.jpg');
     content: "";
-    position: absolute;
-    z-index: 1;
+    // position: absolute;
+    z-index: -1;
     left: 50% ; top: 50%;
     transform: translate(-50% , -50%);
     background-size: contain;
@@ -216,7 +218,7 @@ body {
     margin-bottom: 15px;
   }
 
-  .movie:hover img {
+  .movie:hover  {
     top: -4px;
     left: -4px;
     position: relative;
@@ -264,14 +266,15 @@ body {
     background-image: url('../img/shadow.png');
     display: block;
     background-size: cover;
-    width: 481px;
-    height: 251px;
+    width: 482px;
+    height: 249px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 49%;
     transform: translate(-50%, -50%);
   }
   .movie-title {
+    font-size: 16px;
     top: 90%;
     left: 4%;
   }
