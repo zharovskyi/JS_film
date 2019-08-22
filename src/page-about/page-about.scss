@@ -9,6 +9,16 @@ h2,
 h3 {
   font-weight: 700;
 }
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.head__search {
+  display: none;
+}
+.head__list button {
+  display: none;
+}
 .head-item-about {
   margin: 0 auto;
 }
@@ -40,19 +50,19 @@ table {
   background-color: #f5f5f5;
 }
 .feedback_text {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-style: italic;
 }
 @media screen and (max-width: 767px) {
   .image-movie_title_section {
     position: relative;
   }
-  .film-frames {
-    display: none;
+  .moviePage {
+    flex-flow: wrap;
   }
-  body{
+  body {
     font-size: 12px;
   }
-  .movieInfo{
+  .movieInfo {
     font-size: 12px;
   }
   .actors-list,
@@ -114,9 +124,6 @@ table {
     margin: 0 auto;
     display: block;
   }
-  .poster {
-    display: none;
-  }
 }
 
 .page-about {
@@ -143,7 +150,6 @@ img {
 }
 
 .subtitle {
-  text-align: center;
   font-weight: bold;
   margin-bottom: 14px;
 }
@@ -211,10 +217,6 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  .page-about_section2 {
-    width: 720px;
-  }
-
   .trailer {
     order: 0;
   }
@@ -243,7 +245,7 @@ img {
     display: flex;
     margin: 0 auto;
     margin-bottom: 30px;
-    max-width: 680px;
+    width: 680px;
   }
 
   .no_image {
@@ -255,27 +257,33 @@ img {
   }
 
   .frames_picture {
-    height: 84px;
-    width: 100px;
+    height: 100px;
+    width: 120px;
     margin: 0 auto;
   }
 
   .frames_image {
-    height: 84px;
+    height: 100px;
+    width: 120px;
+
     object-fit: cover;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .film-media {
+    min-width: 1000px;
+  }
+  .actors .film-frames {
     width: 1000px;
+    margin: 0;
   }
   .actors-list,
   .frames-list {
     display: flex;
     margin: 0 auto;
     margin-bottom: 30px;
-    max-width: 960px;
+    width: 1000px;
   }
   .iframe_trailer {
     width: 720px;
@@ -284,7 +292,7 @@ img {
   }
 
   .review_content {
-    width: 1000px;
+    min-width: 1000px;
     margin: 0 auto;
     padding: 20px 0;
   }
@@ -300,13 +308,14 @@ img {
   }
 
   .frames_picture {
-    width: 200px;
-    height: 120px;
+    width: 230px;
+    height: 150px;
     margin: 0 10px;
   }
 
   .frames_image {
-    height: 120px;
+    width: 230px;
+    height: 150px;
   }
 
   .review_photo {
@@ -731,11 +740,11 @@ nav ul li a:hover {
 
 .moviePage {
   display: flex;
-  margin-top: 85px;
-  margin-bottom: 36px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 .movieListInfo {
-  margin-bottom: 34px;
+  margin-bottom: 15px;
 }
 .movieInfo {
   text-align: flex;
@@ -756,11 +765,10 @@ nav ul li a:hover {
 
 /* Movie/tv show poster - START. */
 .poster {
-  padding: 23px;
   margin-top: 0px;
 }
 .poster img {
-  max-width: 400px;
+  width: 320px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 .shadowMenu {
@@ -814,4 +822,30 @@ nav ul li a:hover {
   line-height: 20px;
   letter-spacing: 0;
   width: 90%;
+}
+
+/* Spinner */
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: -20px;
+  border: 3px solid transparent;
+  border-top-color: #e1302a;
+  border-bottom-color: #2f3640;
+  animation: spinner 0.5s ease infinite;
+}
+@keyframes spinner {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
