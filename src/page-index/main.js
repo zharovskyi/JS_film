@@ -31,6 +31,6 @@ class Foo {
   }
 }
 
-console.log(Foo.instance().getValue())
+// console.log(Foo.instance().getValue())
 
 

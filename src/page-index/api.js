@@ -32,7 +32,6 @@ refs.sortDate.addEventListener('click', sortItemByDate);
 refs.filmsButton.addEventListener('click', burgerMenuMovie);
 refs.serialsButton.addEventListener('click', burgerMenuSerials);
 refs.favoritesButton.addEventListener('click', burgerMenuFavorites);
-
 refs.gallery.addEventListener('click', addFavoriteFilm);
 refs.gallery.addEventListener('click', movieSelected)
 
@@ -48,11 +47,7 @@ markup();
 
 function movieSelected(e) {
   const id = e.target.closest('.movie').dataset.id;
-  // console.log('id :', id);
-  // console.log('e.target :', e.target);
-  // console.log('e.target.closest.movie.dataset.id :', e.target.closest('.movie').dataset.id);
-  localStorage.setItem("id", id);
-  
+  localStorage.setItem("id", id)
   return false;
 }
 
@@ -120,8 +115,6 @@ function addFavoriteFilm(e) {
       e.target.style.fill = '#fff';
      
       if(refs.nav.childNodes[5].classList.contains('nav__main_is_open')) {
-        console.log('refs.nav :');
-        console.dir(refs.nav);
         e.target.closest('.movie').remove();
       }
       const alreadyStored = document.getElementById("alreadyStored");
@@ -138,7 +131,7 @@ function addFavoriteFilm(e) {
 // build favorite list
 function buildFavouriteItem(item) {
   if (item == undefined || item == null) {
-    console.log('add some thing');
+    return;
   } else {
     insertMarkup(item);
   }
@@ -166,7 +159,6 @@ function refreshFilmChoice(e) {
     apiPopular.fetch().then(result => {
       itemGallery = result;
       insertMarkup(result);
-
     })
   }
 }
@@ -179,7 +171,6 @@ function changeColorStar(){
     return;
   } else {
     let idFromLocStor = getItemLocStor.map(el => +el.id);
-    console.log('idFromLocStor :', idFromLocStor);
     let idFromDom = document.querySelectorAll(".use");
      [...idFromDom].forEach(el => {
        let idCurrentElement = +el.dataset.id;
@@ -189,8 +180,6 @@ function changeColorStar(){
       }
       else{
         el.classList.remove('svg-green');
-        console.log('bed');
-       
       }
      })
 
