@@ -1473,11 +1473,11 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.backdrop_path : depth0),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "")
     + "\n  </a>\n  <p class=\"movie-title\">\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.title : depth0),{"name":"if","hash":{},"fn":container.program(6, data, 0),"inverse":container.program(8, data, 0),"data":data})) != null ? stack1 : "")
-    + "  </p>\n  <svg class=\"svg-bell\">\n    <use class=\"subscription_Bell\" href=\"img/sprite.svg#bell\"></use>\n  </svg>\n"
+    + "  </p>\n  <svg class=\"svg-bell\">\n    <use class=\"subscription_Bell\" href=\"../img/sprite.svg#bell\"></use>\n  </svg>\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.favorites : depth0),{"name":"if","hash":{},"fn":container.program(10, data, 0),"inverse":container.program(12, data, 0),"data":data})) != null ? stack1 : "")
     + "      <use class=\"use\" data-id=\""
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" href=\"img/sprite.svg#star-full\"></use>\n    </svg>\n    <p class=\"average\">"
+    + "\" href=\"../img/sprite.svg#star-full\"></use>\n    </svg>\n    <p class=\"average\">"
     + alias4(((helper = (helper = helpers.vote_average || (depth0 != null ? depth0.vote_average : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"vote_average","hash":{},"data":data}) : helper)))
     + "</p>\n</li>\n";
 },"2":function(container,depth0,helpers,partials,data) {
@@ -1487,7 +1487,7 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + container.escapeExpression(((helper = (helper = helpers.backdrop_path || (depth0 != null ? depth0.backdrop_path : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"backdrop_path","hash":{},"data":data}) : helper)))
     + "\" alt=\"movie-title\">\n";
 },"4":function(container,depth0,helpers,partials,data) {
-    return "    <img class=\"movie-logo\" src=\"img/not-found.png\" alt=\"movie-title\">\n";
+    return "    <img class=\"movie-logo\" src=\"../img/not-found.png\" alt=\"movie-title\">\n";
 },"6":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -1684,7 +1684,7 @@ var menu_burger = __webpack_require__(23);
 // CONCATENATED MODULE: ./src/apiSearchMovie.js
 const baseUrl = 'https://api.themoviedb.org/3/search/';
 /* harmony default export */ var apiSearchMovie = ({
-  key: 'https://api.themoviedb.org/3/search/',
+  key: '667e6c0579f71e858d539ca597385526',
   type: 'movie',
   page: 1,
   adult: false,
@@ -2154,4 +2154,4 @@ class Foo {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=index.1daebff9c87b2f72978b.js.map
+//# sourceMappingURL=index.36058991bc4900d052ee.js.map

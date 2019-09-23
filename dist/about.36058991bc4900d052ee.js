@@ -15265,7 +15265,7 @@ class page_about_PageAbout {
       max = Math.floor(max);
       let trailerNumber = Math.floor(Math.random() * (max - min + 1)) + min;
       const trailerKey = data.results[trailerNumber].key;
-      this.refs.iframeTrailer.src = "https://www.youtube.com/embed/" + trailerKey;
+      this.refs.iframeTrailer.src = "http://www.youtube.com/embed/" + trailerKey;
     });
   }
 
@@ -15356,4 +15356,4 @@ const pageAbout = new page_about_PageAbout(localStorage.getItem('id'));
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=about.1daebff9c87b2f72978b.js.map
+//# sourceMappingURL=about.36058991bc4900d052ee.js.map

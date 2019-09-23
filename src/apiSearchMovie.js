@@ -1,7 +1,7 @@
 const baseUrl = 'https://api.themoviedb.org/3/search/';
 
 export default {
-  key: 'https://api.themoviedb.org/3/search/',
+  key: '667e6c0579f71e858d539ca597385526',
   type: 'movie',
   page: 1,
   adult: false,
