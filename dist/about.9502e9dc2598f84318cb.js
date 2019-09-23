@@ -15265,7 +15265,7 @@ class page_about_PageAbout {
       max = Math.floor(max);
       let trailerNumber = Math.floor(Math.random() * (max - min + 1)) + min;
       const trailerKey = data.results[trailerNumber].key;
-      this.refs.iframeTrailer.src = "http://www.youtube.com/embed/" + trailerKey;
+      this.refs.iframeTrailer.src = "https://www.youtube.com/embed/" + trailerKey;
     });
   }
 
