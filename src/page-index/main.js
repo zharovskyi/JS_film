@@ -12,25 +12,18 @@ import '../partials/elementActive';
 import '../partials/upArrow';
 import '../scss/upArrow.scss';
 import '../scss/select.scss';
-// import apiSearchMovie from '../apiSearchMovie.js'
-// import apiSearchImg from '../apiSearchMovie.js'
-// import apiPopular from '../apiPopular.js'
-
-
-
 
 class Foo {
-  constructor () {
+  constructor() {
     this.value = 'foobar'
   }
-  static instance () {
+  static instance() {
     return new Foo()
   }
-  getValue () {
+  getValue() {
     return this.value
   }
 }
 
-// console.log(Foo.instance().getValue())
 
 

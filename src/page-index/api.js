@@ -34,16 +34,13 @@ refs.serialsButton.addEventListener('click', burgerMenuSerials);
 refs.favoritesButton.addEventListener('click', burgerMenuFavorites);
 refs.gallery.addEventListener('click', addFavoriteFilm);
 refs.gallery.addEventListener('click', movieSelected)
-
-
-
 // BUILD MAIN PAGE LIST
 function markup() {
-     apiPopular.type = 'movie';
-    apiPopular.fetch().then(result => {
-      itemGallery = result;
-      insertMarkup(setFavorites(result));
-    })
+  apiPopular.type = 'movie';
+  apiPopular.fetch().then(result => {
+    itemGallery = result;
+    insertMarkup(setFavorites(result));
+  })
 }
 markup();
 
@@ -69,8 +66,6 @@ function setFavorites(items) {
   }
 }
 
-
-
 // insert from search.js
 const openlightbox = document.querySelector(".lightbox");
 const lightboxShadow = document.querySelector(".lightbox_shadow");
@@ -90,13 +85,11 @@ function searchSbm(e) {
       clearListItemFilm();
       itemGallery = result;
       insertMarkup(result);
+
     })
 }
 
-
 // add film to local storage
-
-
 function addFavoriteFilm(e) {
   if (e.target.classList.contains("use")) {
     let idUse = e.target.dataset.id;
@@ -116,7 +109,7 @@ function addFavoriteFilm(e) {
       localArr = localArr.filter(element => +element.id !== +idUse);
       e.target.style.fill = '#fff';
 
-      if(refs.nav.childNodes[5].classList.contains('nav__main_is_open')) {
+      if (refs.nav.childNodes[5].classList.contains('nav__main_is_open')) {
         e.target.closest('.movie').remove();
       }
       const alreadyStored = document.getElementById("alreadyStored");
@@ -138,8 +131,6 @@ function buildFavouriteItem(item) {
     insertMarkup(item);
   }
 }
-
-
 // Click Button and Buid page TV SHOW ,Favourite
 
 function refreshFilmChoice(e) {
@@ -247,11 +238,6 @@ async function insertMarkup(items) {
   await refs.gallery.insertAdjacentHTML('beforeend', markup);
   await changeColorStar();
 }
-//  function insertMarkup(items) {
-//   const markup =  buildMarkup(items);
-//   refs.gallery.insertAdjacentHTML('beforeend', markup);
-// }
-
 // Build list Iem Hbs
 function buildMarkup(items) {
   return popularHbs(items);
