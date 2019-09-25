@@ -15356,4 +15356,4 @@ const pageAbout = new page_about_PageAbout(localStorage.getItem('id'));
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=about.36058991bc4900d052ee.js.map
+//# sourceMappingURL=about.147e490906b36112640e.js.map
