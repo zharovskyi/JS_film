@@ -11967,32 +11967,32 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "\n        "
+  return "\r\n        "
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + alias4(((helper = (helper = helpers[" "] || (depth0 != null ? depth0[" "] : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":" ","hash":{},"data":data}) : helper)))
-    + "\n";
+    + "\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"moviePage\">\n  <div class=\"poster\"><img src=\"http://image.tmdb.org/t/p/w400/"
+  return "<div class=\"moviePage\">\r\n  <div class=\"poster\"><img src=\"http://image.tmdb.org/t/p/w400/"
     + alias4(((helper = (helper = helpers.poster_path || (depth0 != null ? depth0.poster_path : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"poster_path","hash":{},"data":data}) : helper)))
-    + "\"></div>\n  <div class=\"info\">\n    <h2>"
+    + "\"></div>\r\n  <div class=\"info\">\r\n    <h2>"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h2>\n    <h2>"
+    + "</h2>\r\n    <h2>"
     + alias4(((helper = (helper = helpers.release_date || (depth0 != null ? depth0.release_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"release_date","hash":{},"data":data}) : helper)))
-    + "</h2>\n    <ul class=\"movieListInfo\">\n      <li class=\"movieInfo\">\n        <div class=\"movieInfoSpacer1\"> <strong>Countries</strong> </div>"
+    + "</h2>\r\n    <ul class=\"movieListInfo\">\r\n      <li class=\"movieInfo\">\r\n        <div class=\"movieInfoSpacer1\"> <strong>Countries</strong> </div>"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.production_countries : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "      </li>\n      <li class=\"movieInfo\">\n        <div class=\"movieInfoSpacer1\"> <strong>Tagline</strong></div>"
+    + "      </li>\r\n      <li class=\"movieInfo\">\r\n        <div class=\"movieInfoSpacer1\"> <strong>Tagline</strong></div>"
     + alias4(((helper = (helper = helpers.tagline || (depth0 != null ? depth0.tagline : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"tagline","hash":{},"data":data}) : helper)))
-    + "\n      </li>\n      <li class=\"movieInfo\">\n        <div class=\"movieInfoSpacer1\"> <strong>Genres</strong></div>"
+    + "\r\n      </li>\r\n      <li class=\"movieInfo\">\r\n        <div class=\"movieInfoSpacer1\"> <strong>Genres</strong></div>"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.genres : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "      </li>\n      <li class=\"movieInfo\">\n        <div class=\"movieInfoSpacer1\"> <strong>Rating</strong></div>"
+    + "      </li>\r\n      <li class=\"movieInfo\">\r\n        <div class=\"movieInfoSpacer1\"> <strong>Rating</strong></div>"
     + alias4(((helper = (helper = helpers.vote_average || (depth0 != null ? depth0.vote_average : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"vote_average","hash":{},"data":data}) : helper)))
-    + "\n      </li>\n      <li class=\"movieInfo\">\n        <div class=\"movieInfoSpacer1\"> <strong>Runtime</strong></div>"
+    + "\r\n      </li>\r\n      <li class=\"movieInfo\">\r\n        <div class=\"movieInfoSpacer1\"> <strong>Runtime</strong></div>"
     + alias4(((helper = (helper = helpers.runtime || (depth0 != null ? depth0.runtime : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"runtime","hash":{},"data":data}) : helper)))
-    + " min\n      </li>\n    </ul>\n    <div class=\"plot\">\n      <h3>Overview</h3>\n      <p>"
+    + " min\r\n      </li>\r\n    </ul>\r\n    <div class=\"plot\">\r\n      <h3>Overview</h3>\r\n      <p>"
     + alias4(((helper = (helper = helpers.overview || (depth0 != null ? depth0.overview : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"overview","hash":{},"data":data}) : helper)))
-    + "</p>\n    </div>\n  </div>\n</div>\n";
+    + "</p>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 },"useData":true});
 
 /***/ }),
@@ -12004,11 +12004,11 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div>\n\n<li class=\"actors_item\">\n  <div class=\"actor_photo\">\n    <img class=\"actor_image\" src=\"https://image.tmdb.org/t/p/w500/"
+  return "<div>\r\n\r\n<li class=\"actors_item\">\r\n  <div class=\"actor_photo\">\r\n    <img class=\"actor_image\" src=\"https://image.tmdb.org/t/p/w500/"
     + alias4(((helper = (helper = helpers.profile_path || (depth0 != null ? depth0.profile_path : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"profile_path","hash":{},"data":data}) : helper)))
-    + "\" alt=\"\">\n  </div>\n  <span class=\"actor_name\">"
+    + "\" alt=\"\">\r\n  </div>\r\n  <span class=\"actor_name\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
-    + "</span>\n</li>\n</div>\n";
+    + "</span>\r\n</li>\r\n</div>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -12024,9 +12024,9 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "<li class=\"frames_item\">\n  <div class=\"frames_picture\">\n    <img class=\"frames_image\" src=\"https://image.tmdb.org/t/p/w500/"
+  return "<li class=\"frames_item\">\r\n  <div class=\"frames_picture\">\r\n    <img class=\"frames_image\" src=\"https://image.tmdb.org/t/p/w500/"
     + container.escapeExpression(((helper = (helper = helpers.file_path || (depth0 != null ? depth0.file_path : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"file_path","hash":{},"data":data}) : helper)))
-    + "\" alt=\"\">\n  </div>\n</li>\n";
+    + "\" alt=\"\">\r\n  </div>\r\n</li>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -12042,11 +12042,11 @@ function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj);
 module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
-  return "<li class=\"review_item\">\n  <section class=\"review_content\">\n    <h3 class=\"feedback_author\">"
+  return "<li class=\"review_item\">\r\n  <section class=\"review_content\">\r\n    <h3 class=\"feedback_author\">"
     + container.escapeExpression(((helper = (helper = helpers.author || (depth0 != null ? depth0.author : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"author","hash":{},"data":data}) : helper)))
-    + "</h3>\n\n"
+    + "</h3>\r\n\r\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.feedbackLength : depth0),{"name":"if","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "")
-    + "  </sec>\n</li>\n";
+    + "  </sec>\r\n</li>\r\n";
 },"2":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -12056,13 +12056,13 @@ module.exports = (Handlebars["default"] || Handlebars).template({"1":function(co
     + alias4(((helper = (helper = helpers.smallText || (depth0 != null ? depth0.smallText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"smallText","hash":{},"data":data}) : helper)))
     + "<span class=\"hidden_text\">"
     + alias4(((helper = (helper = helpers.extendedText || (depth0 != null ? depth0.extendedText : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"extendedText","hash":{},"data":data}) : helper)))
-    + "</span>\n      <button class=\"hidden_textbtn\">...more</button>\n    </p>\n";
+    + "</span>\r\n      <button class=\"hidden_textbtn\">...more</button>\r\n    </p>\r\n";
 },"4":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "    <span class=\"feedback_text\">"
     + container.escapeExpression(((helper = (helper = helpers.smallText || (depth0 != null ? depth0.smallText : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"smallText","hash":{},"data":data}) : helper)))
-    + "</span>\n";
+    + "</span>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -15265,7 +15265,7 @@ class page_about_PageAbout {
       max = Math.floor(max);
       let trailerNumber = Math.floor(Math.random() * (max - min + 1)) + min;
       const trailerKey = data.results[trailerNumber].key;
-      this.refs.iframeTrailer.src = "https://www.youtube.com/embed/" + trailerKey;
+      this.refs.iframeTrailer.src = "http://www.youtube.com/embed/" + trailerKey;
     });
   }
 
@@ -15356,4 +15356,4 @@ const pageAbout = new page_about_PageAbout(localStorage.getItem('id'));
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=about.9502e9dc2598f84318cb.js.map
+//# sourceMappingURL=about.d98db71a70e57086d15d.js.map
